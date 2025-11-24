@@ -1,0 +1,197 @@
+---
+import { Building2, Users, Briefcase, User } from 'lucide-react';
+
+// Organizational structure from PDF
+const orgStructure = {
+  gerencia: {
+    name: "Manuel Fernando Ccama",
+    position: "Gerente General",
+    icon: Building2
+  },
+  direcciones: [
+    {
+      name: "Diego Rey",
+      position: "Gerencia Corporativa",
+      description: "Representa el nexo con el grupo Autrisa",
+      icon: Users,
+      level: 1
+    },
+    {
+      name: "Percy Adriano Ramos",
+      position: "Gerencia Administrativa",
+      description: "Administra recursos financieros y humanos",
+      icon: Briefcase,
+      level: 1
+    },
+    {
+      name: "Maria Cecilia Chavez",
+      position: "Secretaria General",
+      description: "Gestión documental y comunicación interna",
+      icon: User,
+      level: 1
+    }
+  ],
+  jefaturas: [
+    {
+      name: "Roldan Coral",
+      position: "Jefatura de Sucursal",
+      description: "Supervisión de operaciones locales",
+      icon: Users,
+      level: 2
+    },
+    {
+      name: "Daniel Davila",
+      position: "Supervisor Financiero",
+      description: "Gestión financiera y control interno",
+      icon: Briefcase,
+      level: 2
+    },
+    {
+      name: "Luz Maria Salas",
+      position: "Jefatura Atención al Cliente",
+      description: "Experiencia del usuario y satisfacción",
+      icon: Users,
+      level: 2
+    },
+    {
+      name: "Sol Delgado Arias",
+      position: "Coordinadora RRHH",
+      description: "Clima laboral y capacitación",
+      icon: User,
+      level: 2
+    }
+  ]
+};
+
+const GerenteIcon = orgStructure.gerencia.icon;
+---
+
+<section id="organizacion" class="section-padding bg-background">
+  <div class="container-custom">
+    <div class="text-center mb-16 scroll-slide-up">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-text-principal mb-6">
+        Estructura Organizacional
+      </h2>
+      <p class="text-lg text-text-secundario max-w-3xl mx-auto">
+        Una jerarquía clara y funcional que garantiza eficiencia operativa y comunicación efectiva
+      </p>
+    </div>
+
+    <!-- Organizational Chart -->
+    <div class="max-w-6xl mx-auto">
+      <!-- Nivel Estratégico -->
+      <div class="flex justify-center mb-12 scroll-fade-in">
+        <div class="glass-card-hover p-6 text-center group">
+          <div class="flex items-center justify-center gap-3 mb-4">
+            <div class="p-3 rounded-xl bg-primary-azul/10 border border-primary-azul/20">
+              <GerenteIcon className="w-8 h-8 text-primary-azul" />
+            </div>
+            <div class="text-left">
+              <h3 class="text-xl font-bold text-text-principal">
+                {orgStructure.gerencia.name}
+              </h3>
+              <p class="text-primary-azul font-medium">
+                {orgStructure.gerencia.position}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Connecting Line -->
+      <div class="h-8 w-0.5 bg-accent-plata/30 mx-auto mb-8 scroll-scale delay-300"></div>
+
+      <!-- Nivel Táctico -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 scroll-slide-up delay-400">
+        {orgStructure.direcciones.map((direccion, index) => {
+          const Icon = direccion.icon;
+          return (
+            <div key={index} class="glass-card-hover p-4 text-center group">
+              <div class="flex flex-col items-center gap-3">
+                <div class="p-2 rounded-lg bg-accent-plata/10 border border-accent-plata/20">
+                  <Icon className="w-6 h-6 text-accent-plata" />
+                </div>
+                <div>
+                  <h4 class="text-lg font-semibold text-text-principal mb-1">
+                    {direccion.name}
+                  </h4>
+                  <p class="text-primary-azul text-sm font-medium mb-2">
+                    {direccion.position}
+                  </p>
+                  <p class="text-text-secundario text-xs leading-relaxed">
+                    {direccion.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <!-- Connecting Lines to Jefaturas -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+        <div class="h-4"></div>
+        <div class="h-4 border-l-2 border-accent-plata/30"></div>
+        <div class="h-4 border-l-2 border-accent-plata/30"></div>
+        <div class="h-4 border-l-2 border-accent-plata/30"></div>
+      </div>
+
+      <!-- Nivel Operativo (Jefaturas) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 scroll-slide-up delay-600">
+        {orgStructure.jefaturas.map((jefatura, index) => {
+          const Icon = jefatura.icon;
+          return (
+            <div key={index} class="glass-card p-4 text-center">
+              <div class="flex flex-col items-center gap-3">
+                <div class="p-2 rounded-lg bg-glass-border border">
+                  <Icon className="w-5 h-5 text-text-secundario" />
+                </div>
+                <div>
+                  <h5 class="text-sm font-semibold text-text-principal mb-1">
+                    {jefatura.name}
+                  </h5>
+                  <p class="text-accent-plata text-xs font-medium mb-2">
+                    {jefatura.position}
+                  </p>
+                  <p class="text-text-secundario text-xs leading-relaxed">
+                    {jefatura.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+
+    <!-- Organizational Stats -->
+    <div class="mt-16 pt-16 border-t border-glass-border scroll-fade-in delay-800">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div>
+          <h4 class="text-2xl font-bold text-primary-azul mb-2">3</h4>
+          <p class="text-text-secundario">Niveles Organizacionales</p>
+        </div>
+        <div>
+          <h4 class="text-2xl font-bold text-primary-azul mb-2">8</h4>
+          <p class="text-text-secundario">Direcciones y Jefaturas</p>
+        </div>
+        <div>
+          <h4 class="text-2xl font-bold text-primary-azul mb-2">221</h4>
+          <p class="text-text-secundario">Colaboradores Totales</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Custom styling for organizational chart */
+  .org-chart-container {
+    position: relative;
+  }
+  
+  .connecting-line {
+    background: linear-gradient(to bottom, rgba(192, 192, 192, 0.3) 50%, transparent 50%);
+    background-size: 2px 16px;
+  }
+</style>

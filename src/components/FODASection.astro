@@ -1,0 +1,230 @@
+---
+import { TrendingUp, Target, AlertTriangle, Shield } from 'lucide-react';
+
+// FODA analysis extracted from PDF
+const fodaAnalysis = {
+  fortalezas: [
+    "Experiencia consolidada en el rubro automotriz nacional",
+    "Alianzas estratégicas con marcas internacionales",
+    "Personal técnico certificado y capacitado",
+    "Implementación de sistemas digitales de ventas y CRM",
+    "Buen posicionamiento de marca y reputación comercial",
+    "Políticas de servicio postventa y atención al cliente",
+    "Capacidad de adaptación a regulaciones ambientales",
+    "Eficiencia en los procesos logísticos de importación y distribución",
+    "Sistema contable y de control interno automatizado",
+    "Implementación de prácticas de sostenibilidad (reciclaje, emisiones)",
+    "Posicionamiento en segmentos de gama media y alta",
+    "Alta satisfacción del cliente según encuestas internas"
+  ],
+  oportunidades: [
+    "Creación de canales digitales y redes sociales para mejorar experiencia de compra",
+    "Normas de Indecopi (garantía, postventa) que aumentan confianza del cliente",
+    "Desarrollo de aplicaciones móviles para monitoreo y diagnóstico del vehículo",
+    "Creación del Fondo de Promoción de Electromovilidad (FONCOER) y financiamiento verde",
+    "Gran inversión requerida en infraestructura como barrera de entrada",
+    "Incremento de créditos vehiculares y leasing automotriz en el sistema bancario",
+    "Mayor interés del público joven en movilidad personal (motos, autos)",
+    "Conciencia ambiental creciente que impulsa preferencia por vehículos híbridos y eléctricos",
+    "Incremento de la demanda por vehículos utilitarios (SUV y camionetas)",
+    "Alta concentración de concesionarios facilita alianzas estratégicas para liderazgo",
+    "Adopción de software avanzado (IA, Big Data, CRM) para gestión de inventarios",
+    "Incentivos del Estado para importación de vehículos ecológicos (eléctricos/híbridos)"
+  ],
+  debilidades: [
+    "Alta dependencia de vehículos importados (vulnerable al tipo de cambio)",
+    "Limitada oferta de vehículos eléctricos o híbridos",
+    "Procesos administrativos poco automatizados",
+    "Falta de diversificación en líneas de negocio",
+    "Escasa presencia en regiones fuera de Lima",
+    "Dependencia de proveedores extranjeros",
+    "Baja inversión en innovación tecnológica",
+    "Falta de alianzas financieras para crédito vehicular",
+    "Ausencia de un sistema robusto de evaluación del desempeño",
+    "Baja participación en licitaciones del sector público o corporativo",
+    "Poca innovación en estrategias de ventas personalizadas"
+  ],
+  amenazas: [
+    "Tasas de interés (TEA) elevadas que limitan el acceso al crédito vehicular",
+    "Convenios y Tratados de Libre Comercio (TLC) vigentes (China, Japón) y EE.UU. vigentes",
+    "Cambios en hábitos de movilidad (uso de autos particulares vs transporte público)",
+    "Nuevas técnicas obligatorias del MTC (frenos ABS, airbag, control de estabilidad)",
+    "Reglamentos sobre homologación de modelos importados",
+    "Volatilidad del tipo de cambio que encarece la importación de vehículos",
+    "Legislación laboral y tributaria (cambiante en Perú) que impacta operaciones",
+    "Regulaciones ambientales más estrictas sobre emisiones vehiculares (ej. Euro VI+)",
+    "Cumplimiento de estándares internacionales de emisiones y seguridad vehicular"
+  ]
+};
+
+const fodaColors = {
+  fortalezas: {
+    bg: "bg-semantic-exito/10",
+    border: "border-semantic-exito/30",
+    text: "text-semantic-exito",
+    icon: Shield
+  },
+  oportunidades: {
+    bg: "bg-semantic-exito/10",
+    border: "border-semantic-exito/30",
+    text: "text-semantic-exito",
+    icon: TrendingUp
+  },
+  debilidades: {
+    bg: "bg-semantic-alerta/10",
+    border: "border-semantic-alerta/30",
+    text: "text-semantic-alerta",
+    icon: Target
+  },
+  amenazas: {
+    bg: "bg-semantic-alerta/10",
+    border: "border-semantic-alerta/30",
+    text: "text-semantic-alerta",
+    icon: AlertTriangle
+  }
+};
+---
+
+<section id="foda" class="section-padding bg-background">
+  <div class="container-custom">
+    <div class="text-center mb-16 scroll-slide-up">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-text-principal mb-6">
+        Análisis Estratégico FODA
+      </h2>
+      <p class="text-lg text-text-secundario max-w-3xl mx-auto">
+        Evaluación integral de nuestra posición estratégica en el mercado automotriz
+      </p>
+    </div>
+
+    <!-- FODA Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
+      {/* Fortalezas */}
+      <div class={`glass-card p-8 ${fodaColors.fortalezas.bg} ${fodaColors.fortalezas.border} border-2 scroll-slide-up delay-100`}>
+        <div class="flex items-center gap-4 mb-6">
+          <div class="p-3 rounded-xl bg-semantic-exito/20">
+            <fodaColors.fortalezas.icon className={`w-8 h-8 ${fodaColors.fortalezas.text}`} />
+          </div>
+          <h3 class={`text-2xl font-bold ${fodaColors.fortalezas.text}`}>
+            FORTALEZAS
+          </h3>
+        </div>
+        <ul class="space-y-3">
+          {fodaAnalysis.fortalezas.map((item, index) => (
+            <li key={index} class="flex items-start gap-3 text-text-principal">
+              <div class="w-2 h-2 bg-semantic-exito rounded-full mt-2 flex-shrink-0"></div>
+              <span class="text-sm leading-relaxed">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Oportunidades */}
+      <div class={`glass-card p-8 ${fodaColors.oportunidades.bg} ${fodaColors.oportunidades.border} border-2 scroll-slide-up delay-200`}>
+        <div class="flex items-center gap-4 mb-6">
+          <div class="p-3 rounded-xl bg-semantic-exito/20">
+            <fodaColors.oportunidades.icon className={`w-8 h-8 ${fodaColors.oportunidades.text}`} />
+          </div>
+          <h3 class={`text-2xl font-bold ${fodaColors.oportunidades.text}`}>
+            OPORTUNIDADES
+          </h3>
+        </div>
+        <ul class="space-y-3">
+          {fodaAnalysis.oportunidades.map((item, index) => (
+            <li key={index} class="flex items-start gap-3 text-text-principal">
+              <div class="w-2 h-2 bg-semantic-exito rounded-full mt-2 flex-shrink-0"></div>
+              <span class="text-sm leading-relaxed">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Debilidades */}
+      <div class={`glass-card p-8 ${fodaColors.debilidades.bg} ${fodaColors.debilidades.border} border-2 scroll-slide-up delay-300`}>
+        <div class="flex items-center gap-4 mb-6">
+          <div class="p-3 rounded-xl bg-semantic-alerta/20">
+            <fodaColors.debilidades.icon className={`w-8 h-8 ${fodaColors.debilidades.text}`} />
+          </div>
+          <h3 class={`text-2xl font-bold ${fodaColors.debilidades.text}`}>
+            DEBILIDADES
+          </h3>
+        </div>
+        <ul class="space-y-3">
+          {fodaAnalysis.debilidades.map((item, index) => (
+            <li key={index} class="flex items-start gap-3 text-text-principal">
+              <div class="w-2 h-2 bg-semantic-alerta rounded-full mt-2 flex-shrink-0"></div>
+              <span class="text-sm leading-relaxed">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Amenazas */}
+      <div class={`glass-card p-8 ${fodaColors.amenazas.bg} ${fodaColors.amenazas.border} border-2 scroll-slide-up delay-400`}>
+        <div class="flex items-center gap-4 mb-6">
+          <div class="p-3 rounded-xl bg-semantic-alerta/20">
+            <fodaColors.amenazas.icon className={`w-8 h-8 ${fodaColors.amenazas.text}`} />
+          </div>
+          <h3 class={`text-2xl font-bold ${fodaColors.amenazas.text}`}>
+            AMENAZAS
+          </h3>
+        </div>
+        <ul class="space-y-3">
+          {fodaAnalysis.amenazas.map((item, index) => (
+            <li key={index} class="flex items-start gap-3 text-text-principal">
+              <div class="w-2 h-2 bg-semantic-alerta rounded-full mt-2 flex-shrink-0"></div>
+              <span class="text-sm leading-relaxed">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    {/* Strategic Insights */}
+    <div class="mt-16 pt-16 border-t border-glass-border scroll-fade-in delay-500">
+      <div class="text-center mb-8">
+        <h3 class="text-2xl font-bold text-text-principal mb-4">
+          Insights Estratégicos
+        </h3>
+        <p class="text-text-secundario max-w-3xl mx-auto">
+          Basado en el análisis cuantitativo EFI (Evaluación de Factores Internos) y EFE (Evaluación de Factores Externos)
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="glass-card p-6 text-center">
+          <div class="text-3xl font-bold text-semantic-exito mb-2">2.71</div>
+          <p class="text-text-secundario text-sm">Puntuación EFI</p>
+          <p class="text-xs text-accent-plata mt-2">Fortalezas superan debilidades</p>
+        </div>
+        <div class="glass-card p-6 text-center">
+          <div class="text-3xl font-bold text-semantic-exito mb-2">3.69</div>
+          <p class="text-text-secundario text-sm">Puntuación EFE</p>
+          <p class="text-xs text-accent-plata mt-2">Más oportunidades que amenazas</p>
+        </div>
+        <div class="glass-card p-6 text-center">
+          <div class="text-3xl font-bold text-primary-azul mb-2">4.5/5</div>
+          <p class="text-text-secundario text-sm">Posición Estratégica</p>
+          <p class="text-xs text-accent-plata mt-2">Fortaleza favorable</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Custom animations for FODA items */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .foda-item {
+    animation: fadeInUp 0.5s ease-out;
+  }
+</style>

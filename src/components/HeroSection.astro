@@ -1,0 +1,64 @@
+---
+import { Car, Award } from 'lucide-react';
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+}
+
+const { 
+  title = "Incamotors S.A.C.",
+  subtitle = "Liderazgo y Garantía en Servicios Automotrices en el Sur del Perú"
+} = Astro.props;
+---
+
+<section id="inicio" class="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-black">
+  <!-- Background Image/Video Container -->
+  <div class="absolute inset-0 z-0">
+    <div class="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-black/80 z-10"></div>
+    <!-- Placeholder for background image - in a real implementation this would be a video or high-quality image -->
+    <div class="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/80"></div>
+  </div>
+  
+  <!-- Content -->
+  <div class="relative z-20 text-center max-w-4xl mx-auto px-8">
+    <div class="space-y-8">
+      <!-- Icon -->
+      <div class="flex justify-center mb-8 scroll-scale delay-200">
+        <div class="p-6 rounded-full bg-primary-azul/10 border border-primary-azul/20">
+          <Car className="w-16 h-16 text-primary-azul" />
+        </div>
+      </div>
+      
+      <!-- Main Title -->
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-text-principal leading-tight scroll-slide-up delay-400">
+        {title}
+      </h1>
+      
+      <!-- Subtitle -->
+      <p class="text-lg md:text-xl lg:text-2xl text-text-secundario max-w-3xl mx-auto leading-relaxed scroll-slide-up delay-600">
+        {subtitle}
+      </p>
+      
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-2 bg-glass-fill backdrop-blur-xl border border-glass-border rounded-full scroll-scale delay-800">
+        <Award className="w-5 h-5 text-accent-plata" />
+        <span class="text-sm font-medium text-accent-plata">Certificación ISO 9001:2008</span>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 scroll-fade-in delay-800">
+    <div class="w-6 h-10 border-2 border-accent-plata/50 rounded-full flex justify-center animate-bounce">
+      <div class="w-1 h-3 bg-accent-plata rounded-full mt-2"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Ensure animations trigger on page load */
+  section {
+    animation: fadeIn 0.5s ease-out;
+  }
+</style>

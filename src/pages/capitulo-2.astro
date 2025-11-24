@@ -1,0 +1,177 @@
+---
+import DocsLayout from '../layouts/DocsLayout.astro';
+import MatrixFODA from '../components/docs/MatrixFODA.astro';
+import ExcelViewer from '../components/docs/ExcelViewer.astro';
+---
+
+<DocsLayout title="Capítulo II: Análisis Estratégico" currentPath="/capitulo-2">
+  <!-- Introducción -->
+  <section class="content-card">
+    <h2 id="introduccion">Introducción al Análisis Estratégico</h2>
+    <p class="text-lg mt-4">
+      El análisis estratégico de Incamotors S.A.C. se basa en la aplicación de herramientas metodológicas 
+      que permiten evaluar tanto el entorno interno como externo de la organización, identificando factores 
+      claves que influyen en su desempeño competitivo.
+    </p>
+  </section>
+
+  <!-- Matriz FODA -->
+  <section id="foda" class="mt-12">
+    <h2>2.1 Matriz FODA</h2>
+    <p class="mt-4">
+      La matriz FODA es una herramienta fundamental para el análisis estratégico que permite identificar 
+      las Fortalezas y Debilidades internas de la organización, así como las Oportunidades y Amenazas del entorno externo.
+    </p>
+    
+    <div class="mt-6">
+      <MatrixFODA />
+    </div>
+
+    <div class="content-card mt-6">
+      <h4>Análisis de Resultados FODA</h4>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+        <div>
+          <h5 class="text-sm font-semibold text-matrix-fortaleza mb-2">Fortalezas Clave</h5>
+          <ul class="text-sm space-y-1 text-text-secundario">
+            <li>• Experiencia consolidada de 48+ años</li>
+            <li>• 15+ alianzas con marcas internacionales</li>
+            <li>• Personal certificado y capacitado</li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="text-sm font-semibold text-matrix-oportunidad mb-2">Oportunidades Principales</h5>
+          <ul class="text-sm space-y-1 text-text-secundario">
+            <li>• Crecimiento del e-commerce automotriz</li>
+            <li>• Incentivos para electromovilidad</li>
+            <li>• Mayor demanda de SUVs</li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="text-sm font-semibold text-matrix-debilidad mb-2">Debilidades Críticas</h5>
+          <ul class="text-sm space-y-1 text-text-secundario">
+            <li>• Dependencia de importaciones</li>
+            <li>• Poca automatización administrativa</li>
+            <li>• Limitada diversificación</li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="text-sm font-semibold text-matrix-amenaza mb-2">Amenazas Relevantes</h5>
+          <ul class="text-sm space-y-1 text-text-secundario">
+            <li>• Tasas de interés elevadas</li>
+            <li>• Volatilidad cambiaria</li>
+            <li>• Normativas ambientales estrictas</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Matriz EFI -->
+  <section id="efi" class="mt-12">
+    <h2>2.2 Matriz EFI (Evaluación de Factores Internos)</h2>
+    <p class="mt-4">
+      La matriz EFI permite evaluar las fortalezas y debilidades más importantes dentro de las áreas funcionales de la empresa.
+    </p>
+
+    <ExcelViewer 
+      excelPath="/data/Ingenieria-Admistracion2025/Ingenieria-Admistracion2025/analisis interno.xlsx"
+      title="Matriz EFI - Evaluación de Factores Internos"
+    />
+
+    <div class="content-card mt-6">
+      <h4>Interpretación EFI</h4>
+      <p>
+        La puntuación total ponderada de <strong class="text-primary-azul">2.71</strong> indica que Incamotors S.A.C. 
+        tiene una posición interna por encima del promedio (2.5). Esto sugiere que las fortalezas de la organización 
+        superan sus debilidades, aunque existen áreas de mejora importantes.
+      </p>
+    </div>
+  </section>
+
+  <!-- Matriz EFE -->
+  <section id="efe" class="mt-12">
+    <h2>2.3 Matriz EFE (Evaluación de Factores Externos)</h2>
+    <p class="mt-4">
+      La matriz EFE permite identificar y evaluar las oportunidades y amenazas en el entorno externo de la organización.
+    </p>
+
+    <ExcelViewer 
+      excelPath="/data/Ingenieria-Admistracion2025/Ingenieria-Admistracion2025/ANALISIS EXTERNO EFEy pestel .xlsx"
+      title="Matriz EFE - Evaluación de Factores Externos"
+    />
+
+    <div class="content-card mt-6">
+      <h4>Interpretación EFE</h4>
+      <p>
+        La puntuación total ponderada de <strong class="text-primary-azul">3.69</strong> indica que Incamotors S.A.C. 
+        está respondiendo de manera superior al promedio (2.5) a las oportunidades y amenazas del entorno. 
+        Esto sugiere que la organización está capitalizando efectivamente las oportunidades del mercado.
+      </p>
+    </div>
+  </section>
+
+  <!-- Matriz CAME -->
+  <section id="came" class="mt-12">
+    <h2>2.4 Matriz CAME (Corregir, Afrontar, Mantener, Explotar)</h2>
+    <p class="mt-4">
+      La matriz CAME define las estrategias a seguir basándose en el análisis FODA, permitiendo aprovechar las fortalezas,
+      corregir las debilidades, afrontar las amenazas y mantener las oportunidades.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+      <!-- Estrategias FO (Ofensivas) -->
+      <div class="content-card border-l-4 border-accent-emerald">
+        <h4 class="text-accent-emerald font-bold mb-3">Estrategias FO - Ofensivas</h4>
+        <p class="text-sm text-text-muted mb-3">Aprovechar fortalezas para explotar oportunidades</p>
+        <ul class="space-y-2 text-sm">
+          <li>• Expandir presencia digital aprovechando la experiencia y alianzas</li>
+          <li>• Incorporar vehículos eléctricos mediante alianzas con fabricantes</li>
+          <li>• Desarrollar plataforma e-commerce con ISO de calidad</li>
+        </ul>
+      </div>
+
+      <!-- Estrategias FA (Defensivas) -->
+      <div class="content-card border-l-4 border-primary-azul">
+        <h4 class="text-primary-azul font-bold mb-3">Estrategias FA - Defensivas</h4>
+        <p class="text-sm text-text-muted mb-3">Usar fortalezas para afrontar amenazas</p>
+        <ul class="space-y-2 text-sm">
+          <li>• Negociar mejores condiciones con proveedores (leverage de 15+ marcas)</li>
+          <li>• Diversificar portafolio de marcas para reducir riesgo cambiario</li>
+          <li>• Certificaciones adicionales para cumplir normativas ambientales</li>
+        </ul>
+      </div>
+
+      <!-- Estrategias DO (Reorientación) -->
+      <div class="content-card border-l-4 border-accent-amber">
+        <h4 class="text-accent-amber font-bold mb-3">Estrategias DO - Reorientación</h4>
+        <p class="text-sm text-text-muted mb-3">Corregir debilidades para aprovechar oportunidades</p>
+        <ul class="space-y-2 text-sm">
+          <li>• Automatizar procesos administrativos mediante sistemas ERP</li>
+          <li>• Ampliar oferta de vehículos eléctricos e híbridos</li>
+          <li>• Expandir presencia geográfica a nivel nacional</li>
+        </ul>
+      </div>
+
+      <!-- Estrategias DA (Supervivencia) -->
+      <div class="content-card border-l-4 border-matrix-debilidad">
+        <h4 class="text-matrix-debilidad font-bold mb-3">Estrategias DA - Supervivencia</h4>
+        <p class="text-sm text-text-muted mb-3">Reducir debilidades y evitar amenazas</p>
+        <ul class="space-y-2 text-sm">
+          <li>• Establecer alianzas financieras para mitigar tasas de interés</li>
+          <li>• Coberturas cambiarias para reducir volatilidad del dólar</li>
+          <li>• Diversificar líneas de negocio (financiamiento, seguros)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Navegación -->
+  <div class="flex justify-between mt-12 pt-8 border-t border-docs-border">
+    <a href="/capitulo-1" class="text-primary-azul hover:text-primary-hover">
+      ← Capítulo I: Aspectos Generales
+    </a>
+    <a href="/capitulo-3" class="text-primary-azul hover:text-primary-hover">
+      Capítulo III: Análisis Interno →
+    </a>
+  </div>
+</DocsLayout>

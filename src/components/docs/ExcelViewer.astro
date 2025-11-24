@@ -1,0 +1,103 @@
+---
+interface Props {
+  excelPath: string;
+  title: string;
+}
+
+const { excelPath, title } = Astro.props;
+---
+
+<div class="excel-viewer-container" data-excel-path={excelPath}>
+  <div class="content-card">
+    <h4 class="mb-4 flex items-center gap-2">
+      <svg class="w-5 h-5 text-accent-emerald" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+      </svg>
+      {title}
+    </h4>
+    <div id={`excel-container-${title.replace(/\s+/g, '-')}`} class="excel-content bg-white dark:bg-slate-800 rounded-lg p-4 overflow-auto" style="max-height: 600px;">
+      <p class="text-center text-text-muted">Cargando archivo Excel...</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  import * as XLSX from 'xlsx';
+
+  document.addEventListener('DOMContentLoaded', async () => {
+    const containers = document.querySelectorAll('.excel-viewer-container');
+    
+    for (const container of containers) {
+      const excelPath = container.getAttribute('data-excel-path');
+      if (!excelPath) continue;
+
+      try {
+        const response = await fetch(excelPath);
+        const arrayBuffer = await response.arrayBuffer();
+        const workbook = XLSX.read(arrayBuffer, { type: 'array' });
+        
+        const sheetName = workbook.SheetNames[0];
+        const worksheet = workbook.Sheets[sheetName];
+        const htmlString = XLSX.utils.sheet_to_html(worksheet, { 
+          header: '',
+          editable: false
+        });
+        
+        const contentId = `excel-container-${container.querySelector('[id^="excel-container-"]')?.id.split('excel-container-')[1] || ''}`;
+        const contentDiv = document.getElementById(contentId);
+        
+        if (contentDiv) {
+          contentDiv.innerHTML = htmlString;
+          
+          // Style the table
+          const table = contentDiv.querySelector('table');
+          if (table) {
+            table.className = 'w-full border-collapse text-sm';
+            const cells = table.querySelectorAll('td, th');
+            cells.forEach(cell => {
+              cell.className = 'border border-slate-300 dark:border-slate-600 px-3 py-2 text-left';
+            });
+            const headers = table.querySelectorAll('th');
+            headers.forEach(th => {
+              th.className += ' bg-primary-azul/10 font-semibold';
+            });
+          }
+        }
+      } catch (error) {
+        console.error('Error loading Excel file:', error);
+        const contentId = `excel-container-${container.querySelector('[id^="excel-container-"]')?.id.split('excel-container-')[1] || ''}`;
+        const contentDiv = document.getElementById(contentId);
+        if (contentDiv) {
+          contentDiv.innerHTML = '<p class="text-center text-red-500">Error al cargar el archivo Excel</p>';
+        }
+      }
+    }
+  });
+</script>
+
+<style>
+  .excel-content table {
+    font-size: 0.875rem;
+  }
+  
+  .excel-content td, 
+  .excel-content th {
+    min-width: 100px;
+    white-space: nowrap;
+  }
+  
+  body.light .excel-content {
+    background-color: white !important;
+    color: #0F172A !important;
+  }
+  
+  body.light .excel-content table {
+    color: #0F172A !important;
+  }
+  
+  body.light .excel-content td,
+  body.light .excel-content th {
+    color: #0F172A !important;
+    border-color: #CBD5E1 !important;
+  }
+</style>

@@ -1,0 +1,120 @@
+---
+interface Props {
+  currentPath?: string;
+}
+
+const { currentPath = "/" } = Astro.props;
+
+const navigation = [
+  {
+    title: "Presentación",
+    items: [
+      { name: "Inicio", href: "/" }
+    ]
+  },
+  {
+    title: "Capítulo I",
+    items: [
+      { name: "Aspectos Generales", href: "/capitulo-1" },
+      { name: "Reseña Histórica", href: "/capitulo-1#historia" },
+      { name: "Identidad Corporativa", href: "/capitulo-1#identidad" },
+      { name: "Organigrama", href: "/capitulo-1#organigrama" }
+    ]
+  },
+  {
+    title: "Capítulo II",
+    items: [
+      { name: "Análisis Estratégico", href: "/capitulo-2" },
+      { name: "Matriz FODA", href: "/capitulo-2#foda" },
+      { name: "Matriz PESTEL", href: "/capitulo-2#pestel" },
+      { name: "Matriz EFE", href: "/capitulo-2#efe" },
+      { name: "Matriz EFI", href: "/capitulo-2#efi" },
+      { name: "Matriz CAME", href: "/capitulo-2#came" }
+    ]
+  },
+  {
+    title: "Capítulo III",
+    items: [
+      { name: "Análisis Interno", href: "/capitulo-3" },
+      { name: "Cadena de Valor", href: "/capitulo-3#cadena-valor" },
+      { name: "Análisis AMOFHIT", href: "/capitulo-3#amofhit" }
+    ]
+  },
+  {
+    title: "Capítulo IV",
+    items: [
+      { name: "Direccionamiento Estratégico", href: "/capitulo-4" },
+      { name: "Mapa Estratégico", href: "/capitulo-4#mapa" },
+      { name: "Plan Estratégico", href: "/capitulo-4#plan" }
+    ]
+  },
+  {
+    title: "Anexos",
+    items: [
+      { name: "Evidencias", href: "/anexos" },
+      { name: "Referencias", href: "/anexos#referencias" }
+    ]
+  }
+];
+
+function isActive(href: string, current: string): boolean {
+  if (href === "/") return current === "/";
+  return current.startsWith(href);
+}
+---
+
+<aside class="docs-sidebar transition-colors duration-300">
+  <div class="sidebar-nav">
+    <!-- Header -->
+    <div class="px-3 mb-6">
+      <h2 class="text-lg font-bold text-text-principal">
+        Análisis Organizacional
+      </h2>
+      <p class="text-xs text-text-muted mt-1">
+        Incamotors S.A.C.
+      </p>
+    </div>
+
+    <!-- Navigation -->
+    {navigation.map((section) => (
+      <div class="sidebar-section">
+        <div class="sidebar-title">{section.title}</div>
+        <nav class="space-y-0.5">
+          {section.items.map((item) => (
+            <a
+              href={item.href}
+              class={`sidebar-link ${isActive(item.href, currentPath) ? 'active' : ''}`}
+            >
+              <span class="w-1 h-1 rounded-full bg-current opacity-60"></span>
+              <span>{item.name}</span>
+            </a>
+          ))}
+        </nav>
+      </div>
+    ))}
+  </div>
+</aside>
+
+<style>
+  .docs-sidebar {
+    scrollbar-width: thin;
+    scrollbar-color: #334155 #1E293B;
+  }
+
+  .docs-sidebar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .docs-sidebar::-webkit-scrollbar-track {
+    background: #1E293B;
+  }
+
+  .docs-sidebar::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 3px;
+  }
+
+  .docs-sidebar::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+  }
+</style>

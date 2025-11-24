@@ -1,0 +1,137 @@
+---
+import { Calendar, MapPin, Users, Award } from 'lucide-react';
+
+// Historical milestones from PDF
+const milestones = [
+  {
+    year: "1870",
+    title: "Origen del Grupo Autrisa",
+    description: "Tradición familiar emblemática en Arequipa",
+    icon: Calendar,
+    position: "left"
+  },
+  {
+    year: "1970",
+    title: "Diversificación del Grupo",
+    description: "Escisión de la empresa matriz, iniciando expansión",
+    icon: MapPin,
+    position: "right"
+  },
+  {
+    year: "1973",
+    title: "Distribución Volvo",
+    description: "Obtención de la distribución Volvo para Arequipa, Cusco y Puno",
+    icon: Award,
+    position: "left"
+  },
+  {
+    year: "2009",
+    title: "Fundación de Incamotors",
+    description: "7 de agosto - Inicio de actividades como Automotriz Incamotors S.A.C.",
+    icon: Users,
+    position: "right"
+  },
+  {
+    year: "2017",
+    title: "Expansión Ford",
+    description: "Asunción de operación del concesionario Ford integral en Ica",
+    icon: Award,
+    position: "left"
+  },
+  {
+    year: "2023",
+    title: "Crecimiento Regional",
+    description: "70 unidades mensuales en Ica, consolidando liderazgo regional",
+    icon: MapPin,
+    position: "right"
+  }
+];
+---
+
+<section id="historia" class="section-padding bg-background-surface">
+  <div class="container-custom">
+    <div class="text-center mb-16 scroll-slide-up">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-text-principal mb-6">
+        Nuestra Historia & Trayectoria
+      </h2>
+      <p class="text-lg text-text-secundario max-w-3xl mx-auto">
+        Más de 48 años de tradición familiar en el sector automotriz, creciendo juntos desde 1870
+      </p>
+    </div>
+
+    <!-- Timeline Container -->
+    <div class="relative max-w-6xl mx-auto">
+      <!-- Vertical Line -->
+      <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-accent-plata/30"></div>
+      
+      {milestones.map((milestone, index) => {
+        const Icon = milestone.icon;
+        return (
+          <div class={`relative flex items-center mb-16 ${
+            milestone.position === 'left' ? 'justify-start' : 'justify-end'
+          } scroll-slide-up delay-${(index + 1) * 200}`}>
+            <!-- Content Card -->
+            <div class={`glass-card p-6 w-full md:w-5/12 ${
+              milestone.position === 'left' ? 'mr-auto md:mr-8' : 'ml-auto md:ml-8'
+            }`}>
+              <div class="flex items-start gap-4">
+                <div class="p-2 rounded-lg bg-primary-azul/10 border border-primary-azul/20 flex-shrink-0">
+                  <Icon className="w-5 h-5 text-primary-azul" />
+                </div>
+                <div class="flex-1">
+                  <div class="text-sm font-medium text-primary-azul mb-1">
+                    {milestone.year}
+                  </div>
+                  <h3 class="text-lg font-semibold text-text-principal mb-2">
+                    {milestone.title}
+                  </h3>
+                  <p class="text-text-secundario text-sm leading-relaxed">
+                    {milestone.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Timeline Node -->
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary-azul rounded-full border-4 border-background"></div>
+          </div>
+        );
+      })}
+    </div>
+    
+    <!-- Stats Section -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-16 border-t border-glass-border scroll-fade-in delay-400">
+      <div class="text-center">
+        <div class="text-3xl md:text-4xl font-bold text-primary-azul mb-2">48+</div>
+        <div class="text-text-secundario text-sm">Años de Experiencia</div>
+      </div>
+      <div class="text-center">
+        <div class="text-3xl md:text-4xl font-bold text-primary-azul mb-2">221</div>
+        <div class="text-text-secundario text-sm">Colaboradores</div>
+      </div>
+      <div class="text-center">
+        <div class="text-3xl md:text-4xl font-bold text-primary-azul mb-2">8</div>
+        <div class="text-text-secundario text-sm">Sedes a Nivel Nacional</div>
+      </div>
+      <div class="text-center">
+        <div class="text-3xl md:text-4xl font-bold text-primary-azul mb-2">15+</div>
+        <div class="text-text-secundario text-sm">Marcas Representadas</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Mobile timeline adjustments */
+  @media (max-width: 768px) {
+    .timeline-line {
+      left: 1rem;
+      transform: none;
+    }
+    
+    .timeline-node {
+      left: 1rem;
+      transform: none;
+    }
+  }
+</style>

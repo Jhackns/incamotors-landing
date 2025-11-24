@@ -1,0 +1,131 @@
+---
+// FODA data from the previous components
+const fodaData = {
+  fortalezas: [
+    "Experiencia consolidada de 48+ años en el rubro automotriz",
+    "Alianzas estratégicas con 15+ marcas internacionales",
+    "Personal técnico certificado y altamente capacitado",
+    "Implementación de sistemas digitales CRM y ventas",
+    "Buen posicionamiento de marca en el sur del Perú",
+    "Políticas robustas de servicio postventa",
+    "Adaptación a regulaciones ambientales vigentes",
+    "Eficiencia en procesos logísticos de importación",
+    "Sistema contable automatizado y control interno",
+    "Prácticas de sostenibilidad implementadas",
+    "Fuerte presencia en segmentos de gama media-alta",
+    "Alta satisfacción del cliente (encuestas internas)"
+  ],
+  oportunidades: [
+    "Crecimiento de canales digitales y e-commerce",
+    "Normativas Indecopi que aumentan confianza del cliente",
+    "Desarrollo de apps móviles para diagnóstico vehicular",
+    "Fondo FONCOER para electromovilidad",
+    "Barreras de entrada por inversión en infraestructura",
+    "Incremento de créditos vehiculares en banca",
+    "Mayor interés del público joven en movilidad personal",
+    "Conciencia ambiental favorece vehículos híbridos/eléctricos",
+    "Demanda creciente de vehículos utilitarios (SUV)",
+    "Oportunidades de alianzas estratégicas en sector concentrado",
+    "Adopción de IA y Big Data para gestión de inventarios",
+    "Incentivos estatales para vehículos ecológicos"
+  ],
+  debilidades: [
+    "Alta dependencia de vehículos importados",
+    "Limitada oferta de vehículos eléctricos/híbridos",
+    "Procesos administrativos poco automatizados",
+    "Falta de diversificación en líneas de negocio",
+    "Presencia limitada fuera de región sur",
+    "Dependencia de proveedores extranjeros",
+    "Baja inversión en innovación tecnológica",
+    "Alianzas financieras limitadas para crédito vehicular",
+    "Sistema débil de evaluación de desempeño",
+    "Poca participación en licitaciones públicas",
+    "Estrategias de ventas poco personalizadas"
+  ],
+  amenazas: [
+    "Tasas de interés elevadas limitan acceso al crédito",
+    "Tratados de Libre Comercio aumentan competencia",
+    "Cambios en hábitos de movilidad (transporte público)",
+    "Nuevas normativas MTC sobre seguridad vehicular",
+    "Reglamentos estrictos de homologación de importados",
+    "Volatilidad del tipo de cambio (dólar)",
+    "Legislación laboral y tributaria cambiante",
+    "Regulaciones ambientales más estrictas (Euro VI+)",
+    "Cumplimiento de estándares internacionales exigentes"
+  ]
+};
+---
+
+<div class="foda-grid">
+  <!-- Fortalezas -->
+  <div class="foda-card foda-fortaleza">
+    <div class="foda-title text-matrix-fortaleza">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+      <span>FORTALEZAS</span>
+    </div>
+    <ul class="foda-list">
+      {fodaData.fortalezas.map((item, index) => (
+        <li class="foda-item">
+          <span class="foda-bullet bg-matrix-fortaleza"></span>
+          <span>F{index + 1}. {item}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <!-- Oportunidades -->
+  <div class="foda-card foda-oportunidad">
+    <div class="foda-title text-matrix-oportunidad">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+      </svg>
+      <span>OPORTUNIDADES</span>
+    </div>
+    <ul class="foda-list">
+      {fodaData.oportunidades.map((item, index) => (
+        <li class="foda-item">
+          <span class="foda-bullet bg-matrix-oportunidad"></span>
+          <span>O{index + 1}. {item}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <!-- Debilidades -->
+  <div class="foda-card foda-debilidad">
+    <div class="foda-title text-matrix-debilidad">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+      </svg>
+      <span>DEBILIDADES</span>
+    </div>
+    <ul class="foda-list">
+      {fodaData.debilidades.map((item, index) => (
+        <li class="foda-item">
+          <span class="foda-bullet bg-matrix-debilidad"></span>
+          <span>D{index + 1}. {item}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <!-- Amenazas -->
+  <div class="foda-card foda-amenaza">
+    <div class="foda-title text-matrix-amenaza">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+      <span>AMENAZAS</span>
+    </div>
+    <ul class="foda-list">
+      {fodaData.amenazas.map((item, index) => (
+        <li class="foda-item">
+          <span class="foda-bullet bg-matrix-amenaza"></span>
+          <span>A{index + 1}. {item}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</div>

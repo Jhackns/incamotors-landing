@@ -1,0 +1,158 @@
+---
+import { Car, Wrench, Package, Shield, CreditCard, Settings } from 'lucide-react';
+
+// Services and brands from PDF
+const services = [
+  {
+    title: "Venta de Vehículos Nuevos",
+    description: "Amplio portafolio de vehículos nuevos de las mejores marcas internacionales",
+    icon: Car,
+    color: "text-semantic-exito"
+  },
+  {
+    title: "Vehículos Seminuevos",
+    description: "Vehículos usados certificados con garantía y revisión técnica completa",
+    icon: Shield,
+    color: "text-primary-azul"
+  },
+  {
+    title: "Servicios Postventa",
+    description: "Mantenimiento preventivo, correctivo, reparación mecánica y electrónica",
+    icon: Wrench,
+    color: "text-accent-plata"
+  },
+  {
+    title: "Repuestos y Accesorios",
+    description: "Repuestos originales y accesorios de alta calidad para todas las marcas",
+    icon: Package,
+    color: "text-semantic-exito"
+  },
+  {
+    title: "Financiamiento",
+    description: "Planes de financiamiento y seguros vehiculares en alianza con entidades financieras",
+    icon: CreditCard,
+    color: "text-primary-azul"
+  },
+  {
+    title: "Lubricantes Especializados",
+    description: "Lubricantes y combustibles de marcas reconocidas como Mobil, Castrol",
+    icon: Settings,
+    color: "text-accent-plata"
+  }
+];
+
+const brands = [
+  { name: "Toyota", country: "Japón", type: "Vehículos y tecnología" },
+  { name: "Hyundai", country: "Corea del Sur", type: "Autos y vehículos comerciales" },
+  { name: "Ford", country: "EE.UU.", type: "Vehículos, repuestos y tecnología" },
+  { name: "Nissan", country: "Japón", type: "Vehículos y servicio postventa" },
+  { name: "Chevrolet", country: "EE.UU.", type: "Vehículos, repuestos y accesorios" },
+  { name: "Mitsubishi", country: "Japón", type: "Vehículos y repuestos" },
+  { name: "Jeep", country: "EE.UU.", type: "Vehículos 4x4 y repuestos" },
+  { name: "Ram", country: "EE.UU.", type: "Camionetas y repuestos" },
+  { name: "Fiat", country: "Italia", type: "Vehículos compactos y repuestos" },
+  { name: "Isuzu", country: "Japón", type: "Vehículos de carga y repuestos" },
+  { name: "Fuso", country: "Japón", type: "Camiones, buses y repuestos" },
+  { name: "Geely", country: "China", type: "Vehículos y accesorios" },
+  { name: "Chery", country: "China", type: "Vehículos y repuestos" },
+  { name: "Maxus", country: "China", type: "Camionetas, vans y repuestos" },
+  { name: "JMC", country: "China", type: "Vehículos de trabajo ligero" },
+  { name: "Volvo", country: "Suecia", type: "Vehículos y tecnología de transporte" },
+  { name: "Mobil", country: "EE.UU.", type: "Lubricantes y aceites especializados" }
+];
+---
+
+<section id="servicios" class="section-padding bg-background-surface">
+  <div class="container-custom">
+    <div class="text-center mb-16 scroll-slide-up">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-text-principal mb-6">
+        Nuestros Servicios
+      </h2>
+      <p class="text-lg text-text-secundario max-w-3xl mx-auto">
+        Soluciones integrales en movilidad con la más alta calidad y tecnología de vanguardia
+      </p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+      {services.map((service, index) => {
+        const Icon = service.icon;
+        return (
+          <div class={`glass-card-hover p-8 group scroll-scale delay-${(index + 1) * 100}`}>
+            <div class="flex flex-col items-center text-center gap-6">
+              <div class="p-4 rounded-2xl bg-glass-border border group-hover:border-primary-azul/50 transition-colors duration-300">
+                <Icon className={`w-10 h-10 ${service.color}`} />
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-text-principal mb-4">
+                  {service.title}
+                </h3>
+                <p class="text-text-secundario leading-relaxed">
+                  {service.description}
+                </p>
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+
+    <!-- Brands Section -->
+    <div class="text-center mb-12 scroll-slide-up delay-400">
+      <h3 class="text-2xl md:text-3xl font-bold text-text-principal mb-4">
+        Marcas que Representamos
+      </h3>
+      <p class="text-text-secundario max-w-2xl mx-auto mb-8">
+        Alianzas estratégicas con las mejores marcas automotrices internacionales
+      </p>
+    </div>
+
+    <!-- Brands Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+      {brands.map((brand, index) => (
+        <div class={`glass-card p-6 text-center group hover:border-accent-plata/40 transition-colors duration-300 scroll-scale delay-${(index * 50)}`}>
+          <div class="space-y-3">
+            <h4 class="text-lg font-bold text-text-principal group-hover:text-accent-plata transition-colors duration-300">
+              {brand.name}
+            </h4>
+            <p class="text-xs text-text-secundario">
+              {brand.country}
+            </p>
+            <p class="text-xs text-primary-azul leading-relaxed">
+              {brand.type}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Key Statistics -->
+    <div class="mt-20 pt-16 border-t border-glass-border scroll-slide-up delay-400">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <div class="text-3xl md:text-4xl font-bold text-semantic-exito mb-2">70+</div>
+          <p class="text-text-secundario text-sm">Unidades Mensuales</p>
+        </div>
+        <div>
+          <div class="text-3xl md:text-4xl font-bold text-primary-azul mb-2">15+</div>
+          <p class="text-text-secundario text-sm">Marcas Representadas</p>
+        </div>
+        <div>
+          <div class="text-3xl md:text-4xl font-bold text-accent-plata mb-2">8</div>
+          <p class="text-text-secundario text-sm">Sedes a Nivel Nacional</p>
+        </div>
+        <div>
+          <div class="text-3xl md:text-4xl font-bold text-semantic-exito mb-2">100%</div>
+          <p class="text-text-secundario text-sm">Garantía en Servicios</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Additional styling for service cards hover effects */
+  .glass-card-hover:hover .bg-glass-border {
+    border-color: rgba(192, 192, 192, 0.4);
+  }
+</style>

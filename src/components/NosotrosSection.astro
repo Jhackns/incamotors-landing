@@ -1,0 +1,128 @@
+---
+import { Eye, Target, Heart, TrendingUp, Users, Shield } from 'lucide-react';
+
+// Data from PDF
+const companyInfo = {
+  mission: "Somos una organización pujante y en crecimiento, orientada a la satisfacción de nuestros clientes y a la creación de valor para nuestros accionistas, colaboradores y comunidad.",
+  vision: "Ser el grupo empresarial líder del Perú en ofrecer soluciones en el mundo de la movilidad, reconocidos por brindar un servicio integral y de excelente calidad.",
+  values: [
+    {
+      title: "Actitud",
+      description: "Disposición positiva frente a los retos",
+      icon: Heart
+    },
+    {
+      title: "Superación",
+      description: "Búsqueda de mejora constante",
+      icon: TrendingUp
+    },
+    {
+      title: "Compromiso",
+      description: "Responsabilidad con clientes y empresa",
+      icon: Users
+    },
+    {
+      title: "Calidad",
+      description: "Ofrecer productos y servicios de alto nivel",
+      icon: Shield
+    },
+    {
+      title: "Integridad",
+      description: "Actuar con ética y transparencia",
+      icon: Target
+    }
+  ]
+};
+
+const cards = [
+  {
+    title: "Misión",
+    content: companyInfo.mission,
+    icon: Target,
+    color: "text-primary-azul"
+  },
+  {
+    title: "Visión",
+    content: companyInfo.vision,
+    icon: Eye,
+    color: "text-primary-azul"
+  }
+];
+---
+
+<section id="nosotros" class="section-padding bg-background">
+  <div class="container-custom">
+    <div class="text-center mb-16 scroll-slide-up">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-text-principal mb-6">
+        Nosotros
+      </h2>
+      <p class="text-lg text-text-secundario max-w-3xl mx-auto">
+        Descubre la identidad corporativa que nos define como líderes en el sector automotriz
+      </p>
+    </div>
+
+    <!-- Mission and Vision Cards -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+      {cards.map((card, index) => {
+        const Icon = card.icon;
+        return (
+          <div class={`glass-card-hover p-8 group scroll-slide-up delay-${(index + 1) * 200}`}>
+            <div class="flex items-start gap-4">
+              <div class="p-3 rounded-xl bg-primary-azul/10 border border-primary-azul/20 flex-shrink-0">
+                <Icon className={`w-8 h-8 ${card.color}`} />
+              </div>
+              <div class="flex-1">
+                <h3 class="text-2xl font-semibold text-text-principal mb-4">
+                  {card.title}
+                </h3>
+                <p class="text-text-secundario leading-relaxed text-lg">
+                  {card.content}
+                </p>
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+
+    <!-- Values Section -->
+    <div class="text-center mb-12 scroll-slide-up delay-400">
+      <h3 class="text-2xl md:text-3xl font-bold text-text-principal mb-4">
+        Nuestros Valores
+      </h3>
+      <p class="text-text-secundario max-w-2xl mx-auto">
+        Los pilares que sustentan nuestra cultura organizacional y guían cada decisión
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+      {companyInfo.values.map((value, index) => {
+        const Icon = value.icon;
+        return (
+          <div class={`glass-card-hover p-6 text-center group scroll-scale delay-${(index + 1) * 100}`}>
+            <div class="flex flex-col items-center gap-4">
+              <div class="p-3 rounded-full bg-accent-plata/10 border border-accent-plata/20 group-hover:border-accent-plata/40 transition-colors duration-300">
+                <Icon className="w-6 h-6 text-accent-plata" />
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-text-principal mb-2">
+                  {value.title}
+                </h4>
+                <p class="text-sm text-text-secundario leading-relaxed">
+                  {value.description}
+                </p>
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Additional custom styles for the values section */
+  .glass-card-hover:hover .border-accent-plata\/20 {
+    border-color: rgba(192, 192, 192, 0.4);
+  }
+</style>

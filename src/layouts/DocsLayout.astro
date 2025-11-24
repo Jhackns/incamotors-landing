@@ -1,0 +1,177 @@
+---
+import "../styles/global.css";
+import Sidebar from "../components/docs/Sidebar.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+  currentPath?: string;
+}
+
+const {
+  title,
+  description = "Análisis Organizacional y Direccionamiento Estratégico - Caso de Estudio: Automotriz Incamotors S.A.C.",
+  currentPath = "/"
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="Incamotors, análisis organizacional, FODA, PESTEL, administración, estrategia empresarial" />
+    <meta name="author" content="Ingeniería Administrativa" />
+    
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <title>{title} | Incamotors SAC</title>
+    
+    <!-- Inline theme script to prevent flash -->
+    <script is:inline>
+      (function() {
+        const theme = localStorage.getItem('theme') || 'dark';
+        const html = document.documentElement;
+        const body = document.body;
+        
+        if (theme === 'dark') {
+          html.classList.add('dark');
+          body.classList.remove('light');
+        } else {
+          html.classList.remove('dark');
+          body.classList.add('light');
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="docs-container">
+      <Sidebar currentPath={currentPath} />
+      
+      <main class="docs-content">
+        <!-- Page Header -->
+        <header class="mb-12 pb-6 border-b border-docs-border">
+          <div class="flex items-center justify-between">
+            <div>
+              <h1 class="text-4xl font-bold mb-2">
+                {title}
+              </h1>
+              <p class="text-text-secundario">
+                Ingeniería Administrativa - Universidad Peruana Unión
+              </p>
+            </div>
+
+            <!-- Theme Toggle Button -->
+            <button
+              id="theme-toggle"
+              class="p-3 rounded-lg transition-all duration-300 group theme-toggle-btn"
+              aria-label="Toggle theme"
+              title="Cambiar tema"
+            >
+              <svg id="sun-icon" class="w-6 h-6 text-primary-azul group-hover:scale-110 transition-transform duration-300 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+              </svg>
+              <svg id="moon-icon" class="w-6 h-6 text-primary-azul group-hover:scale-110 transition-transform duration-300 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+              </svg>
+            </button>
+          </div>
+        </header>
+
+        <!-- Page Content -->
+        <article class="prose prose-invert prose-slate max-w-none">
+          <slot />
+        </article>
+      </main>
+    </div>
+    
+    <script>
+      // Update icon visibility based on current theme
+      function updateIcons() {
+        const html = document.documentElement;
+        const isDark = html.classList.contains('dark');
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+        
+        if (sunIcon && moonIcon) {
+          if (isDark) {
+            sunIcon.classList.remove('hidden');
+            moonIcon.classList.add('hidden');
+          } else {
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
+          }
+        }
+      }
+      
+      // Apply theme on page load
+      function applyTheme() {
+        const theme = localStorage.getItem('theme') || 'dark';
+        const html = document.documentElement;
+        const body = document.body;
+        
+        if (theme === 'dark') {
+          html.classList.add('dark');
+          body.classList.remove('light');
+        } else {
+          html.classList.remove('dark');
+          body.classList.add('light');
+        }
+        updateIcons();
+      }
+      
+      // Apply theme immediately
+      applyTheme();
+      
+      // Theme toggle functionality
+      const themeToggle = document.getElementById('theme-toggle');
+      if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+          const html = document.documentElement;
+          const body = document.body;
+          const isDark = html.classList.contains('dark');
+          
+          if (isDark) {
+            html.classList.remove('dark');
+            body.classList.add('light');
+            localStorage.setItem('theme', 'light');
+          } else {
+            html.classList.add('dark');
+            body.classList.remove('light');
+            localStorage.setItem('theme', 'dark');
+          }
+          
+          updateIcons();
+        });
+      }
+      
+      // Reapply theme on page visibility change (when switching tabs)
+      document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) {
+          applyTheme();
+        }
+      });
+    </script>
+  </body>
+</html>
+
+<style>
+  .prose {
+    @apply text-text-secundario;
+  }
+  
+  .prose :where(h1, h2, h3, h4, h5, h6):not(:where([class~="not-prose"] *)) {
+    @apply text-text-principal;
+  }
+  
+  .prose :where(strong):not(:where([class~="not-prose"] *)) {
+    @apply text-text-principal font-semibold;
+  }
+  
+  .prose :where(a):not(:where([class~="not-prose"] *)) {
+    @apply text-primary-azul hover:text-primary-hover no-underline;
+  }
+</style>
