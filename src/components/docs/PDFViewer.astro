@@ -7,53 +7,46 @@ interface Props {
 const { pdfPath, title } = Astro.props;
 ---
 
-<div class="pdf-viewer-container">
-  <div class="content-card">
-    <h4 class="mb-4 flex items-center gap-2">
-      <svg class="w-5 h-5 text- matrix-debilidad" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-      </svg>
-      {title}
-    </h4>
-    <div id={`pdf-container-${title.replace(/\s+/g, '-')}`} class="pdf-content bg-white dark:bg-slate-800 rounded-lg p-4 overflow-auto" style="max-height: 800px;">
-      <p class="text-center text-text-muted">Cargando PDF...</p>
+<div
+  class="w-full h-[800px] bg-slate-100 dark:bg-slate-800 rounded-lg overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700"
+>
+  <div class="w-full h-full flex flex-col">
+    <div
+      class="flex justify-between items-center p-4 bg-white dark:bg-slate-900 border-b border-gray-200 dark:border-gray-700"
+    >
+      <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
+        {title}
+      </h3>
+      <a
+        href={pdfPath}
+        download
+        class="flex items-center gap-2 px-4 py-2 bg-primary-azul text-white rounded-md hover:bg-primary-hover transition-colors text-sm font-medium"
+      >
+        <svg
+          class="w-4 h-4"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+          ></path>
+        </svg>
+        Descargar PDF
+      </a>
     </div>
-    <div class="flex gap-2 justify-center mt-4">
-      <button id={`prev-${title.replace(/\s+/g, '-')}`} class="px-4 py-2 bg-primary-azul text-white rounded hover:bg-primary-hover">
-        ← Anterior
-      </button>
-      <span id={`page-num-${title.replace(/\s+/g, '-')}`} class="px-4 py-2 text-text-principal">Página 1</span>
-      <button id={`next-${title.replace(/\s+/g, '-')}`} class="px-4 py-2 bg-primary-azul text-white rounded hover:bg-primary-hover">
-        Siguiente →
-      </button>
-    </div>
+    <object data={pdfPath} type="application/pdf" class="w-full h-full">
+      <div
+        class="flex flex-col items-center justify-center h-full p-8 text-center text-gray-500 dark:text-gray-400"
+      >
+        <p class="mb-4">Tu navegador no puede visualizar este PDF.</p>
+        <a href={pdfPath} download class="text-primary-azul hover:underline">
+          Descargar PDF para ver
+        </a>
+      </div>
+    </object>
   </div>
 </div>
-
-<script define:vars={{ pdfPath, title }}>
-  // PDF viewer will be initialized after page load
-  window.addEventListener('DOMContentLoaded', async () => {
-    try {
-      // Note: pdfjs-dist requires additional setup for web workers
-      // This is a placeholder for PDF viewing functionality
-      const containerid = `pdf-container-${title.replace(/\s+/g, '-')}`;
-      const container = document.getElementById(containerid);
-      if (container) {
-        container.innerHTML = '<p class="text-center">Vista previa de PDF disponible. <a href="' + pdfPath + '" download class="text-primary-azul underline">Descargar PDF</a></p>';
-      }
-    } catch (error) {
-      console.error('Error loading PDF:', error);
-    }
-  });
-</script>
-
-<style>
-  .pdf-content canvas {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  body.light .pdf-content {
-    background-color: white !important;
-  }
-</style>

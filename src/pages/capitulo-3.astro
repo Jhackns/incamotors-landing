@@ -1,243 +1,225 @@
 ---
-import DocsLayout from '../layouts/DocsLayout.astro';
+import DocsLayout from "../layouts/DocsLayout.astro";
 ---
 
-<DocsLayout title="Capítulo III: Análisis Interno" currentPath="/capitulo-3">
+<DocsLayout
+  title="Capítulo III: Dirección Estratégica"
+  currentPath="/capitulo-3"
+>
   <!-- Introducción -->
   <section class="content-card">
-    <h2>Análisis Interno</h2>
+    <h2>Dirección Estratégica</h2>
     <p class="text-lg mt-4">
-      El análisis interno de Incamotors S.A.C. se enfoca en identificar los recursos, capacidades y 
-      competencias que generan ventaja competitiva en el mercado automotriz peruano.
+      El direccionamiento estratégico define el rumbo de Incamotors S.A.C.
+      mediante la formulación de objetivos, estrategias y un mapa que integra
+      las perspectivas clave para el éxito organizacional.
     </p>
   </section>
 
-  <!-- Cadena de Valor -->
-  <section id="cadena-valor" class="mt-12">
-    <h2>3.1 Cadena de Valor de Porter</h2>
-    <p class="mt-4">
-      La cadena de valor identifica las actividades primarias y de apoyo que agregan valor en la operación de Incamotors.
-    </p>
+  <!-- Objetivos Estratégicos -->
+  <section id="objetivos" class="mt-12">
+    <h2>3.1 Objetivos Estratégicos por Perspectiva</h2>
 
-    <div class="mt-8 space-y-6">
-      <!-- Actividades Primarias -->
-      <div class="content-card border-l-4 border-primary-azul">
-        <h3 class="text-primary-azul">Actividades Primarias</h3>
-        
-        <div class="mt-6 space-y-4">
-          <div class="p-4 bg-docs-hover rounded">
-            <h4 class="font-semibold text-text-principal mb-2">1. Logística de Entrada</h4>
-            <ul class="text-sm space-y-1">
-              <li>• Importación directa de vehículos desde fabricantes internacionales</li>
-              <li>• Gestión de almacenes y showrooms en 8 sedes</li>
-              <li>• Control de inventarios mediante sistema digitalizado</li>
-            </ul>
-          </div>
-
-          <div class="p-4 bg-docs-hover rounded">
-            <h4 class="font-semibold text-text-principal mb-2">2. Operaciones</h4>
-            <ul class="text-sm space-y-1">
-              <li>• Preparación y acondicionamiento de vehículos (PDI)</li>
-              <li>• Servicios de mantenimiento preventivo y correctivo</li>
-              <li>• Reparaciones mecánicas y electrónicas certificadas</li>
-            </ul>
-          </div>
-
-          <div class="p-4 bg-docs-hover rounded">
-            <h4 class="font-semibold text-text-principal mb-2">3. Logística de Salida</h4>
-            <ul class="text-sm space-y-1">
-              <li>• Entrega de vehículos con proceso de calidad</li>
-              <li>• Distribución de repuestos y accesorios</li>
-              <li>• Gestión de órdenes de servicio postventa</li>
-            </ul>
-          </div>
-
-          <div class="p-4 bg-docs-hover rounded">
-            <h4 class="font-semibold text-text-principal mb-2">4. Marketing y Ventas</h4>
-         <ul class="text-sm space-y-1">
-              <li>• Estrategias de marketing digital y tradicional</li>
-              <li>• Fuerza de ventas especializada por marca</li>
-              <li>• Alianzas con entidades financieras para crédito vehicular</li>
-            </ul>
-          </div>
-
-          <div class="p-4 bg-docs-hover rounded">
-            <h4 class="font-semibold text-text-principal mb-2">5. Servicio Postventa</h4>
-            <ul class="text-sm space-y-1">
-              <li>• Garantía y seguimiento post-venta</li>
-              <li>• Programas de mantenimiento preventivo</li>
-              <li>• Atención al cliente y gestión de reclamos</li>
-            </ul>
-          </div>
-        </div>
+    <div class="space-y-6 mt-6">
+      <!-- Perspectiva Financiera -->
+      <div class="content-card border-l-4 border-matrix-fortaleza">
+        <h3 class="text-matrix-fortaleza">💰 Perspectiva Financiera</h3>
+        <ul class="mt-4 space-y-2">
+          <li class="flex items-start gap-2">
+            <span class="text-primary-azul">•</span>
+            <span>Incrementar la rentabilidad en un 15% anual</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-primary-azul">•</span>
+            <span>Reducir costos operativos mediante automatización</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-primary-azul">•</span>
+            <span
+              >Diversificar fuentes de ingresos (servicios postventa,
+              financiamiento)</span
+            >
+          </li>
+        </ul>
       </div>
 
-      <!-- Actividades de Apoyo -->
+      <!-- Perspectiva del Cliente -->
+      <div class="content-card border-l-4 border-matrix-oportunidad">
+        <h3 class="text-matrix-oportunidad">👥 Perspectiva del Cliente</h3>
+        <ul class="mt-4 space-y-2">
+          <li class="flex items-start gap-2">
+            <span class="text-primary-azul">•</span>
+            <span>Aumentar la satisfacción del cliente al 95%</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-primary-azul">•</span>
+            <span>Expandir la cuota de mercado en el sur del Perú</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-primary-azul">•</span>
+            <span
+              >Fortalecer la imagen de marca como líder en calidad y servicio</span
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- Perspectiva Procesos Internos -->
+      <div class="content-card border-l-4 border-primary-azul">
+        <h3 class="text-primary-azul">⚙️ Perspectiva de Procesos Internos</h3>
+        <ul class="mt-4 space-y-2">
+          <li class="flex items-start gap-2">
+            <span class="text-primary-azul">•</span>
+            <span
+              >Implementar sistema CRM integral para gestión de clientes</span
+            >
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-primary-azul">•</span>
+            <span>Optimizar cadena de suministro y logística</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-primary-azul">•</span>
+            <span>Certificar procesos bajo normas ISO actualizadas</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Perspectiva Aprendizaje y Crecimiento -->
       <div class="content-card border-l-4 border-semantic-info">
-        <h3 class="text-semantic-info">Actividades de Apoyo</h3>
-        
-        <div class="mt-6 space-y-4">
-          <div class="p-4 bg-docs-hover rounded">
-            <h4 class="font-semibold text-text-principal mb-2">Infraestructura de la Empresa</h4>
-            <p class="text-sm">Administración general, finanzas, contabilidad, gestión de calidad (ISO 9001:2008)</p>
-          </div>
-
-          <div class="p-4 bg-docs-hover rounded">
-            <h4 class="font-semibold text-text-principal mb-2">Gestión de Recursos Humanos</h4>
-            <p class="text-sm">Reclutamiento, capacitación técnica, desarrollo de competencias, clima laboral</p>
-          </div>
-
-          <div class="p-4 bg-docs-hover rounded">
-            <h4 class="font-semibold text-text-principal mb-2">Desarrollo de Tecnología</h4>
-            <p class="text-sm">Sistemas CRM, plataformas digitales, diagnóstico vehicular, automatización</p>
-          </div>
-
-          <div class="p-4 bg-docs-hover rounded">
-            <h4 class="font-semibold text-text-principal mb-2">Abastecimiento</h4>
-            <p class="text-sm">Negociación con proveedores, compra de repuestos originales, contratos con fabricantes</p>
-          </div>
-        </div>
+        <h3 class="text-semantic-info">
+          📚 Perspectiva de Aprendizaje y Crecimiento
+        </h3>
+        <ul class="mt-4 space-y-2">
+          <li class="flex items-start gap-2">
+            <span class="text-primary-azul">•</span>
+            <span
+              >Capacitar al 100% del personal en nuevas tecnologías automotrices</span
+            >
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-primary-azul">•</span>
+            <span>Implementar programa de desarrollo de líderes internos</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-primary-azul">•</span>
+            <span
+              >Mejorar clima organizacional (índice de satisfacción laboral >
+              85%)</span
+            >
+          </li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- Análisis AMOFHIT -->
-  <section id="amofhit" class="mt-12">
-    <h2>3.2 Análisis AMOFHIT</h2>
+  <!-- Plan Estratégico -->
+  <section id="plan" class="mt-12">
+    <h2>3.2 Plan Estratégico 2024-2027</h2>
     <p class="mt-4">
-      El análisis AMOFHIT evalúa siete áreas funcionales clave de la organización.
+      El plan estratégico trienal establece las iniciativas clave para alcanzar
+      los objetivos organizacionales.
     </p>
 
     <table class="matrix-table mt-6">
       <thead>
         <tr>
-          <th>Área Funcional</th>
-          <th class="w-24 text-center">Calificación</th>
-          <th>Fortalezas / Debilidades</th>
+          <th>Iniciativa Estratégica</th>
+          <th class="w-32">Responsable</th>
+          <th class="w-32">Plazo</th>
+          <th class="w-32">Indicador</th>
         </tr>
       </thead>
       <tbody>
-        <tr class="bg-matrix-fortaleza/5">
-          <td class="font-semibold">Administración</td>
-          <td class="text-center text-matrix-fortaleza font-bold">8/10</td>
-          <td>
-            <strong>F:</strong> Estructura organizacional clara, certificación ISO<br />
-            <strong>D:</strong> Procesos poco automatizados
-          </td>
+        <tr>
+          <td>Digitalización de procesos comerciales</td>
+          <td>Gerencia Administrativa</td>
+          <td>2024-2025</td>
+          <td>% automatización</td>
         </tr>
-        <tr class="bg-matrix-fortaleza/5">
-          <td class="font-semibold">Marketing</td>
-          <td class="text-center text-matrix-fortaleza font-bold">7/10</td>
-          <td>
-            <strong>F:</strong> Buen posicionamiento de marca, alianzas estratégicas<br />
-            <strong>D:</strong> Limitada presencia digital
-          </td>
+        <tr>
+          <td>Expansión de showroom en Tacna</td>
+          <td>Gerencia Corporativa</td>
+          <td>2025</td>
+          <td>Nueva sede operativa</td>
         </tr>
-        <tr class="bg-matrix-fortaleza/5">
-          <td class="font-semibold">Operaciones</td>
-          <td class="text-center text-matrix-fortaleza font-bold">8/10</td>
-          <td>
-            <strong>F:</strong> Personal técnico certificado, eficiencia logística<br />
-            <strong>D:</strong> Dependencia de importaciones
-          </td>
+        <tr>
+          <td>Incorporación de vehículos eléctricos</td>
+          <td>Gerencia General</td>
+          <td>2025-2026</td>
+          <td>% venta vehículos ecológicos</td>
         </tr>
-        <tr class="bg-matrix-debilidad/5">
-          <td class="font-semibold">Finanzas</td>
-          <td class="text-center text-matrix-debilidad font-bold">6/10</td>
-          <td>
-            <strong>F:</strong> Sistema contable automatizado<br />
-            <strong>D:</strong> Vulnerabilidad al tipo de cambio
-          </td>
+        <tr>
+          <td>Programa de fidelización de clientes</td>
+          <td>Jefatura Atención al Cliente</td>
+          <td>2024</td>
+          <td>Tasa de retención</td>
         </tr>
-        <tr class="bg-matrix-fortaleza/5">
-          <td class="font-semibold">Recursos Humanos</td>
-          <td class="text-center text-matrix-fortaleza font-bold">7/10</td>
-          <td>
-            <strong>F:</strong> Personal capacitado, buen clima laboral<br />
-            <strong>D:</strong> Falta sistema robusto de evaluación de desempeño
-          </td>
+        <tr>
+          <td>Certificación ISO 9001:2015</td>
+          <td>Gerencia Administrativa</td>
+          <td>2025</td>
+          <td>Certificación vigente</td>
         </tr>
-        <tr class="bg-matrix-debilidad/5">
-          <td class="font-semibold">Información</td>
-          <td class="text-center text-matrix-debilidad font-bold">6/10</td>
-          <td>
-            <strong>F:</strong> CRM implementado<br />
-            <strong>D:</strong> Baja adopción de IA y Big Data
-          </td>
-        </tr>
-        <tr class="bg-matrix-debilidad/5">
-          <td class="font-semibold">Tecnología</td>
-          <td class="text-center text-matrix-debilidad font-bold">5/10</td>
-          <td>
-            <strong>F:</strong> Herramientas de diagnóstico modernas<br />
-            <strong>D:</strong> Baja inversión en innovación tecnológica
-          </td>
+        <tr>
+          <td>Implementación de Big Data para inventarios</td>
+          <td>Supervisor Financiero</td>
+          <td>2025-2026</td>
+          <td>Reducción de stock obsoleto</td>
         </tr>
       </tbody>
     </table>
-
-    <div class="content-card mt-6">
-      <h4>Conclusiones del Análisis AMOFHIT</h4>
-      <p class="mt-2">
-        ✅ Las áreas de <strong>Administración, Marketing y Operaciones</strong> muestran desempeño superior.<br />
-        ⚠️ Las áreas de <strong>Tecnología, Información y Finanzas</strong> requieren mejora prioritaria.<br />
-        📊 Promedio general: <strong class="text-primary-azul">6.7/10</strong> - Desempeño aceptable con necesidad de fortalecimiento en áreas tecnológicas.
-      </p>
-    </div>
   </section>
 
-  <!-- Recursos y Capacidades -->
-  <section class="mt-12">
-    <h2>3.3 Recursos y Capacidades Distintivas</h2>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-      <div class="content-card">
-        <h4 class="text-matrix-fortaleza">Recursos Tangibles</h4>
-        <ul class="mt-4 space-y-2 text-sm">
-          <li>• 8 sedes a nivel nacional</li>
-          <li>• Inventario de 15+ marcas automotrices</li>
-          <li>• Talleres de servicio certificados</li>
-          <li>• Equipamiento de diagnóstico moderno</li>
-        </ul>
-      </div>
-
-      <div class="content-card">
-        <h4 class="text-matrix-fortaleza">Recursos Intangibles</h4>
-        <ul class="mt-4 space-y-2 text-sm">
-          <li>• 48+ años de experiencia (marca familiar)</li>
-          <li>• Certificación ISO 9001:2008</li>
-          <li>• Reputación de calidad en el sur del Perú</li>
-          <li>• Alianzas strategicas con fabricantes</li>
-        </ul>
-      </div>
-
-      <div class="content-card">
-        <h4 class="text-primary-azul">Capacidades Organizacionales</h4>
-        <ul class="mt-4 space-y-2 text-sm">
-          <li>• Eficiencia en logística de importación</li>
-          <li>• Personal técnico altamente calificado</li>
-          <li>• Gestión de servicio postventa efectiva</li>
-          <li>• Adaptabilidad a regulaciones del sector</li>
-        </ul>
-      </div>
-
-      <div class="content-card">
-        <h4 class="text-primary-azul">Ventaja Competitiva</h4>
-        <p class="mt-2 text-sm">
-          La combinación de experiencia familiar, alianzas con múltiples marcas y servicio postventa 
-          certificado constituye una ventaja competitiva sostenible en el mercado del sur peruano.
-        </p>
-      </div>
+  <!-- Conclusiones -->
+  <section class="content-card mt-12">
+    <h3>Conclusiones del Direccionamiento Estratégico</h3>
+    <div class="mt-4 space-y-4 text-text-secundario">
+      <p>
+        ✅ El mapa estratégico integra las cuatro perspectivas del BSC,
+        asegurando alineación entre objetivos financieros, satisfacción del
+        cliente, eficiencia operativa y desarrollo del talento humano.
+      </p>
+      <p>
+        ✅ Las iniciativas estratégicas 2024-2027 se enfocan en digitalización,
+        expansión geográfica y sostenibilidad ambiental, respondiendo a las
+        principales oportunidades identificadas en el análisis FODA.
+      </p>
+      <p>
+        ✅ La implementación del plan requiere inversión en tecnología,
+        capacitación y nuevas sedes, con un ROI esperado positivo a partir del
+        segundo año.
+      </p>
     </div>
   </section>
 
   <!-- Navegación -->
   <div class="flex justify-between mt-12 pt-8 border-t border-docs-border">
-    <a href="/capitulo-2" class="text-primary-azul hover:text-primary-hover">
-      ← Capítulo II: Análisis Estratégico
+    <a
+      href="/capitulo-2"
+      class="text-primary-azul hover:text-primary-hover flex items-center gap-2"
+    >
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+        ><path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M15 19l-7-7 7-7"></path></svg
+      >
+      Capítulo II: Análisis Estratégico
     </a>
-    <a href="/capitulo-4" class="text-primary-azul hover:text-primary-hover">
-      Capítulo IV: Dirección Estratégica →
+    <a
+      href="/anexos"
+      class="text-primary-azul hover:text-primary-hover flex items-center gap-2"
+    >
+      Anexos
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+        ><path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M9 5l7 7-7 7"></path></svg
+      >
     </a>
   </div>
 </DocsLayout>

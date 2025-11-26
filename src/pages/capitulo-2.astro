@@ -1,177 +1,466 @@
 ---
-import DocsLayout from '../layouts/DocsLayout.astro';
-import MatrixFODA from '../components/docs/MatrixFODA.astro';
-import ExcelViewer from '../components/docs/ExcelViewer.astro';
+import DocsLayout from "../layouts/DocsLayout.astro";
+import ExcelViewer from "../components/docs/ExcelViewer.astro";
+import PDFViewer from "../components/docs/PDFViewer.astro";
 ---
 
-<DocsLayout title="Capítulo II: Análisis Estratégico" currentPath="/capitulo-2">
-  <!-- Introducción -->
-  <section class="content-card">
-    <h2 id="introduccion">Introducción al Análisis Estratégico</h2>
-    <p class="text-lg mt-4">
-      El análisis estratégico de Incamotors S.A.C. se basa en la aplicación de herramientas metodológicas 
-      que permiten evaluar tanto el entorno interno como externo de la organización, identificando factores 
-      claves que influyen en su desempeño competitivo.
-    </p>
-  </section>
+<DocsLayout
+  title="Capítulo II: Análisis Planeamiento Estratégico"
+  currentPath="/capitulo-2"
+>
+  <!-- 2.1 Visión, Misión y Valores -->
+  <section id="vision-mision" class="content-card mb-12">
+    <h2>2.1 Análisis de Visión y Misión , valores de la empresa.</h2>
 
-  <!-- Matriz FODA -->
-  <section id="foda" class="mt-12">
-    <h2>2.1 Matriz FODA</h2>
-    <p class="mt-4">
-      La matriz FODA es una herramienta fundamental para el análisis estratégico que permite identificar 
-      las Fortalezas y Debilidades internas de la organización, así como las Oportunidades y Amenazas del entorno externo.
-    </p>
-    
-    <div class="mt-6">
-      <MatrixFODA />
-    </div>
+    <div class="space-y-8 mt-6">
+      <!-- Visión -->
+      <div
+        class="bg-slate-50 dark:bg-slate-900/50 p-6 rounded-xl border border-primary-azul/20"
+      >
+        <h3
+          class="text-xl font-bold text-primary-azul mb-3 flex items-center gap-2"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            ><path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+            ></path></svg
+          >
+          Visión
+        </h3>
+        <p class="text-text-secundario italic font-semibold mb-4">
+          “Ser el grupo empresarial lider del Perú en ofrecer soluciones en el
+          mundo de la movilidad, reconocidos por brindar un servicio integral y
+          de excelente calidad.”
+        </p>
+        <p class="text-text-secundario text-sm leading-relaxed">
+          Ser el grupo empresarial líder en el Perú en soluciones de movilidad,
+          reconocido por su innovación, sostenibilidad y calidad en el servicio.
+          Aspiramos a consolidarnos como una empresa referente en el sector
+          automotriz, que impulse el progreso del país y promueva una movilidad
+          moderna, eficiente y responsable con el medio ambiente.
+          <br /><br />
+          La frase “servicio integral y de excelente calidad” resalta un atributo
+          diferenciador clave: la experiencia completa para el cliente. No se trata
+          únicamente de vender un producto, sino de acompañar al consumidor durante
+          todo el ciclo de vida de su vehículo.
+        </p>
+      </div>
 
-    <div class="content-card mt-6">
-      <h4>Análisis de Resultados FODA</h4>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-        <div>
-          <h5 class="text-sm font-semibold text-matrix-fortaleza mb-2">Fortalezas Clave</h5>
-          <ul class="text-sm space-y-1 text-text-secundario">
-            <li>• Experiencia consolidada de 48+ años</li>
-            <li>• 15+ alianzas con marcas internacionales</li>
-            <li>• Personal certificado y capacitado</li>
-          </ul>
-        </div>
-        <div>
-          <h5 class="text-sm font-semibold text-matrix-oportunidad mb-2">Oportunidades Principales</h5>
-          <ul class="text-sm space-y-1 text-text-secundario">
-            <li>• Crecimiento del e-commerce automotriz</li>
-            <li>• Incentivos para electromovilidad</li>
-            <li>• Mayor demanda de SUVs</li>
-          </ul>
-        </div>
-        <div>
-          <h5 class="text-sm font-semibold text-matrix-debilidad mb-2">Debilidades Críticas</h5>
-          <ul class="text-sm space-y-1 text-text-secundario">
-            <li>• Dependencia de importaciones</li>
-            <li>• Poca automatización administrativa</li>
-            <li>• Limitada diversificación</li>
-          </ul>
-        </div>
-        <div>
-          <h5 class="text-sm font-semibold text-matrix-amenaza mb-2">Amenazas Relevantes</h5>
-          <ul class="text-sm space-y-1 text-text-secundario">
-            <li>• Tasas de interés elevadas</li>
-            <li>• Volatilidad cambiaria</li>
-            <li>• Normativas ambientales estrictas</li>
-          </ul>
-        </div>
+      <!-- Misión -->
+      <div
+        class="bg-slate-50 dark:bg-slate-900/50 p-6 rounded-xl border border-primary-azul/20"
+      >
+        <h3
+          class="text-xl font-bold text-primary-azul mb-3 flex items-center gap-2"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            ><path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+            ></path></svg
+          >
+          Misión
+        </h3>
+        <p class="text-text-secundario italic font-semibold mb-4">
+          “Somos una organización pujante y en crecimiento, orientada a la
+          satisfacción de nuestros clientes y a la creación de valor para
+          nuestros accionistas, colaboradores y comunidad.”
+        </p>
+        <p class="text-text-secundario text-sm leading-relaxed">
+          Incamotors es una organización sólida y en constante crecimiento que
+          ofrece soluciones integrales de movilidad, enfocadas en la
+          satisfacción total de sus clientes. Nos dedicamos a brindar productos
+          y servicios automotrices de alta calidad, respaldados por un equipo
+          humano comprometido y capacitado. Nuestra misión es generar valor
+          sostenible para nuestros accionistas, colaboradores y la comunidad,
+          contribuyendo al desarrollo del país mediante la innovación, la
+          responsabilidad social y la excelencia en el servicio.
+        </p>
+      </div>
+
+      <!-- Propósito -->
+      <div
+        class="bg-slate-50 dark:bg-slate-900/50 p-6 rounded-xl border border-primary-azul/20"
+      >
+        <h3
+          class="text-xl font-bold text-primary-azul mb-3 flex items-center gap-2"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            ><path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg
+          >
+          Propósito
+        </h3>
+        <p class="text-text-secundario italic font-semibold mb-4">
+          “Crear experiencias superiores en todas nuestras actividades y
+          relaciones.”
+        </p>
+        <p class="text-text-secundario text-sm leading-relaxed">
+          El propósito expresa de manera clara la razón de ser de la empresa y
+          se convierte en una guía que orienta sus decisiones estratégicas y
+          operativas. No se limita a un enfoque comercial, sino que abarca todos
+          los aspectos de interacción de la organización: con clientes,
+          colaboradores, proveedores y la comunidad.
+          <br /><br />
+          El término “experiencias superiores” resalta un objetivo que va más allá
+          de la simple venta de un producto o la prestación de un servicio. En el
+          sector automotriz, donde la compra de un vehículo implica confianza, inversión
+          y expectativas a largo plazo, este propósito adquiere una relevancia especial:
+          busca ofrecer una vivencia memorable en cada contacto con la empresa.
+        </p>
       </div>
     </div>
-  </section>
 
-  <!-- Matriz EFI -->
-  <section id="efi" class="mt-12">
-    <h2>2.2 Matriz EFI (Evaluación de Factores Internos)</h2>
-    <p class="mt-4">
-      La matriz EFI permite evaluar las fortalezas y debilidades más importantes dentro de las áreas funcionales de la empresa.
-    </p>
-
-    <ExcelViewer 
-      excelPath="/data/Ingenieria-Admistracion2025/Ingenieria-Admistracion2025/analisis interno.xlsx"
-      title="Matriz EFI - Evaluación de Factores Internos"
-    />
-
-    <div class="content-card mt-6">
-      <h4>Interpretación EFI</h4>
-      <p>
-        La puntuación total ponderada de <strong class="text-primary-azul">2.71</strong> indica que Incamotors S.A.C. 
-        tiene una posición interna por encima del promedio (2.5). Esto sugiere que las fortalezas de la organización 
-        superan sus debilidades, aunque existen áreas de mejora importantes.
+    <div class="mt-8">
+      <h3 class="text-xl font-bold text-primary-azul mb-4">
+        Valores de la Empresa
+      </h3>
+      <p class="text-text-secundario mb-6 text-sm">
+        Los valores institucionales de Incamotors son pilares que sustentan
+        tanto su visión como su propósito. Reflejan una cultura organizacional
+        basada en la mejora continua, la ética y la orientación al cliente.
       </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div
+          class="p-4 bg-slate-100 dark:bg-slate-800 rounded-lg border-l-4 border-primary-azul"
+        >
+          <h4 class="font-bold text-text-principal mb-2">Actitud</h4>
+          <p class="text-sm text-text-muted">
+            Disposición positiva frente a los retos.
+          </p>
+        </div>
+        <div
+          class="p-4 bg-slate-100 dark:bg-slate-800 rounded-lg border-l-4 border-primary-azul"
+        >
+          <h4 class="font-bold text-text-principal mb-2">Superación</h4>
+          <p class="text-sm text-text-muted">Búsqueda de mejora constante.</p>
+        </div>
+        <div
+          class="p-4 bg-slate-100 dark:bg-slate-800 rounded-lg border-l-4 border-primary-azul"
+        >
+          <h4 class="font-bold text-text-principal mb-2">Compromiso</h4>
+          <p class="text-sm text-text-muted">
+            Responsabilidad con clientes y empresa.
+          </p>
+        </div>
+        <div
+          class="p-4 bg-slate-100 dark:bg-slate-800 rounded-lg border-l-4 border-primary-azul"
+        >
+          <h4 class="font-bold text-text-principal mb-2">Calidad</h4>
+          <p class="text-sm text-text-muted">
+            Ofrecer productos y servicios de alto nivel.
+          </p>
+        </div>
+        <div
+          class="p-4 bg-slate-100 dark:bg-slate-800 rounded-lg border-l-4 border-primary-azul"
+        >
+          <h4 class="font-bold text-text-principal mb-2">Integridad</h4>
+          <p class="text-sm text-text-muted">
+            Actuar con ética y transparencia.
+          </p>
+        </div>
+      </div>
+      <div
+        class="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg text-sm text-text-secundario space-y-2"
+      >
+        <p>
+          ● <strong>Coherencia con la visión:</strong> El compromiso con la calidad
+          y la actitud positiva son claves para sostener el liderazgo al que aspira
+          la empresa.
+        </p>
+        <p>
+          ● <strong>Alineación con el propósito:</strong> La integridad y el compromiso
+          generan confianza, lo cual es esencial para construir “experiencias superiores”.
+        </p>
+        <p>
+          ● <strong>Pertinencia en el sector automotriz:</strong> En un rubro donde
+          el servicio postventa y la seguridad son determinantes, valores como calidad,
+          integridad y compromiso se convierten en factores de éxito.
+        </p>
+        <p>
+          ● <strong>Enfoque humano:</strong> El trabajo sobre la actitud y la superación
+          continua contribuye a que los colaboradores se sientan motivados y alineados
+          con los objetivos de la empresa.
+        </p>
+      </div>
     </div>
   </section>
 
-  <!-- Matriz EFE -->
-  <section id="efe" class="mt-12">
-    <h2>2.3 Matriz EFE (Evaluación de Factores Externos)</h2>
-    <p class="mt-4">
-      La matriz EFE permite identificar y evaluar las oportunidades y amenazas en el entorno externo de la organización.
-    </p>
-
-    <ExcelViewer 
-      excelPath="/data/Ingenieria-Admistracion2025/Ingenieria-Admistracion2025/ANALISIS EXTERNO EFEy pestel .xlsx"
-      title="Matriz EFE - Evaluación de Factores Externos"
-    />
+  <!-- 2.2 Estructura Organizacional -->
+  <section id="estructura" class="mb-12">
+    <h2>2.2 Análisis de la Estructura Organizacional de la Empresa</h2>
 
     <div class="content-card mt-6">
-      <h4>Interpretación EFE</h4>
-      <p>
-        La puntuación total ponderada de <strong class="text-primary-azul">3.69</strong> indica que Incamotors S.A.C. 
-        está respondiendo de manera superior al promedio (2.5) a las oportunidades y amenazas del entorno. 
-        Esto sugiere que la organización está capitalizando efectivamente las oportunidades del mercado.
-      </p>
+      <h3 class="text-lg font-semibold mb-4">Organigrama de la Empresa</h3>
+      <div
+        class="bg-white p-4 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden"
+      >
+        <img
+          src="/data/Ingenieria-Admistracion2025/Ingenieria-Admistracion2025/EstructuraOrganizacional.png"
+          alt="Estructura Organizacional de Incamotors"
+          class="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
+        />
+      </div>
+
+      <div class="mt-6 space-y-4">
+        <div>
+          <h4 class="font-bold text-primary-azul">
+            Tipo de Departamentalización
+          </h4>
+          <p class="text-text-secundario">Funcional y Geográfica.</p>
+        </div>
+        <div>
+          <h4 class="font-bold text-primary-azul">
+            Tipo de Estructura Organizacional
+          </h4>
+          <p class="text-text-secundario">
+            Jerárquica vertical con líneas claras de autoridad.
+          </p>
+        </div>
+        <div>
+          <h4 class="font-bold text-primary-azul">Niveles Organizativos</h4>
+          <p class="text-text-secundario">
+            Alta Dirección, Gerencias de Línea, Jefaturas y Personal Operativo.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Matriz CAME -->
-  <section id="came" class="mt-12">
-    <h2>2.4 Matriz CAME (Corregir, Afrontar, Mantener, Explotar)</h2>
-    <p class="mt-4">
-      La matriz CAME define las estrategias a seguir basándose en el análisis FODA, permitiendo aprovechar las fortalezas,
-      corregir las debilidades, afrontar las amenazas y mantener las oportunidades.
+  <!-- 2.3 Cultura Organizacional -->
+  <section id="cultura" class="content-card mb-12">
+    <h2>2.3 Análisis Cultura Organizacional</h2>
+    <p class="mt-4 text-text-secundario">
+      La cultura organizacional de Incamotors se caracteriza por un fuerte
+      enfoque en el servicio al cliente y el desarrollo profesional de sus
+      colaboradores. Se fomenta un ambiente de respeto, colaboración y búsqueda
+      constante de la excelencia.
+    </p>
+  </section>
+
+  <!-- 2.4 Manejo de la Calidad -->
+  <section id="calidad" class="content-card mb-12">
+    <h2>2.4 Análisis del Manejo de la Calidad en la Organización</h2>
+    <p class="mt-4 text-text-secundario">
+      La organización mantiene estándares de calidad alineados con las
+      exigencias de las marcas internacionales que representa (Toyota, etc.). Se
+      implementan procesos de mejora continua y evaluación constante de la
+      satisfacción del cliente.
+    </p>
+  </section>
+
+  <!-- 2.5 Análisis Interno -->
+  <section id="analisis-interno" class="mb-12">
+    <h2 class="mb-6">
+      2.5 Análisis FODA Análisis Interno: Análisis Fortalezas y Debilidades
+    </h2>
+
+    <!-- 2.5.1 Cadena de Valor -->
+    <div class="mb-10">
+      <h3 class="text-xl font-bold mb-4 text-primary-azul">
+        2.5.1 Cadena de Valor de Porter
+      </h3>
+      <PDFViewer
+        pdfPath="/data/Ingenieria-Admistracion2025/Ingenieria-Admistracion2025/CadenaValor.pdf"
+        title="Cadena de Valor"
+      />
+    </div>
+
+    <!-- 2.5.2 AMOFHIT -->
+    <div class="mb-10">
+      <h3 class="text-xl font-bold mb-4 text-primary-azul">
+        2.5.2 Análisis AMOFHIT
+      </h3>
+      <PDFViewer
+        pdfPath="/data/Ingenieria-Admistracion2025/Ingenieria-Admistracion2025/MatrizAMOFHIT.pdf"
+        title="Análisis AMOFHIT"
+      />
+    </div>
+
+    <!-- 2.5.3 EFI -->
+    <div class="mb-10">
+      <h3 class="text-xl font-bold mb-4 text-primary-azul">2.5.3 EFI</h3>
+      <PDFViewer
+        pdfPath="/data/Ingenieria-Admistracion2025/Ingenieria-Admistracion2025/MatrizEFI.pdf"
+        title="Matriz EFI"
+      />
+    </div>
+  </section>
+
+  <!-- 2.6 Análisis Externo -->
+  <section id="analisis-externo" class="mb-12">
+    <h2 class="mb-6">
+      2.6 Análisis FODA Análisis Externo: Análisis Oportunidades Amenazas
+    </h2>
+
+    <!-- 2.6.1 5 Fuerzas de Porter -->
+    <div class="mb-10 content-card">
+      <h3 class="text-xl font-bold mb-4 text-primary-azul">
+        2.6.1 Análisis Micro entorno (5 fuerzas de Porter)
+      </h3>
+      <div
+        class="bg-white p-4 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden"
+      >
+        <img
+          src="/data/Ingenieria-Admistracion2025/Ingenieria-Admistracion2025/5Fuersas.png"
+          alt="5 Fuerzas de Porter"
+          class="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
+        />
+      </div>
+    </div>
+
+    <!-- 2.6.2 PESTEL -->
+    <div class="mb-10">
+      <h3 class="text-xl font-bold mb-4 text-primary-azul">
+        2.6.2 Análisis Macro entorno (PESTEL)
+      </h3>
+      <PDFViewer
+        pdfPath="/data/Ingenieria-Admistracion2025/Ingenieria-Admistracion2025/MatrizPestel .pdf"
+        title="Análisis PESTEL"
+      />
+    </div>
+
+    <!-- 2.6.3 EFE -->
+    <div class="mb-10">
+      <h3 class="text-xl font-bold mb-4 text-primary-azul">2.6.3 EFE</h3>
+      <PDFViewer
+        pdfPath="/data/Ingenieria-Admistracion2025/Ingenieria-Admistracion2025/MatrizEFE.pdf"
+        title="Matriz EFE"
+      />
+    </div>
+  </section>
+
+  <!-- 2.7 CAME -->
+  <section id="came" class="mb-12">
+    <h2>2.7 Análisis Cruce del FODA con el Análisis CAME</h2>
+    <p class="mt-4 mb-6 text-text-secundario">
+      Estrategias para Corregir debilidades, Afrontar amenazas, Mantener
+      fortalezas y Explotar oportunidades.
     </p>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-      <!-- Estrategias FO (Ofensivas) -->
-      <div class="content-card border-l-4 border-accent-emerald">
-        <h4 class="text-accent-emerald font-bold mb-3">Estrategias FO - Ofensivas</h4>
-        <p class="text-sm text-text-muted mb-3">Aprovechar fortalezas para explotar oportunidades</p>
-        <ul class="space-y-2 text-sm">
-          <li>• Expandir presencia digital aprovechando la experiencia y alianzas</li>
-          <li>• Incorporar vehículos eléctricos mediante alianzas con fabricantes</li>
-          <li>• Desarrollar plataforma e-commerce con ISO de calidad</li>
-        </ul>
-      </div>
+    <!-- 2.7.1 Estrategias Ofensivas -->
+    <div class="mb-10">
+      <h3 class="text-xl font-bold mb-4 text-primary-azul">
+        2.7.1 Estrategias Ofensivas
+      </h3>
+      <PDFViewer
+        pdfPath="/data/Ingenieria-Admistracion2025/Ingenieria-Admistracion2025/EstrategiasOfensivas.pdf"
+        title="Estrategias Ofensivas"
+      />
+    </div>
 
-      <!-- Estrategias FA (Defensivas) -->
-      <div class="content-card border-l-4 border-primary-azul">
-        <h4 class="text-primary-azul font-bold mb-3">Estrategias FA - Defensivas</h4>
-        <p class="text-sm text-text-muted mb-3">Usar fortalezas para afrontar amenazas</p>
-        <ul class="space-y-2 text-sm">
-          <li>• Negociar mejores condiciones con proveedores (leverage de 15+ marcas)</li>
-          <li>• Diversificar portafolio de marcas para reducir riesgo cambiario</li>
-          <li>• Certificaciones adicionales para cumplir normativas ambientales</li>
-        </ul>
-      </div>
+    <!-- 2.7.2 Estrategias Defensivas -->
+    <div class="mb-10">
+      <h3 class="text-xl font-bold mb-4 text-primary-azul">
+        2.7.2 Estrategias Defensivas
+      </h3>
+      <PDFViewer
+        pdfPath="/data/Ingenieria-Admistracion2025/Ingenieria-Admistracion2025/EstrategiasDefensivas.pdf"
+        title="Estrategias Defensivas"
+      />
+    </div>
 
-      <!-- Estrategias DO (Reorientación) -->
-      <div class="content-card border-l-4 border-accent-amber">
-        <h4 class="text-accent-amber font-bold mb-3">Estrategias DO - Reorientación</h4>
-        <p class="text-sm text-text-muted mb-3">Corregir debilidades para aprovechar oportunidades</p>
-        <ul class="space-y-2 text-sm">
-          <li>• Automatizar procesos administrativos mediante sistemas ERP</li>
-          <li>• Ampliar oferta de vehículos eléctricos e híbridos</li>
-          <li>• Expandir presencia geográfica a nivel nacional</li>
-        </ul>
-      </div>
+    <!-- 2.7.3 Estrategias Adaptativas -->
+    <div class="mb-10">
+      <h3 class="text-xl font-bold mb-4 text-primary-azul">
+        2.7.3 Estrategias Adaptativas
+      </h3>
+      <PDFViewer
+        pdfPath="/data/Ingenieria-Admistracion2025/Ingenieria-Admistracion2025/EstrategiasAdaptativas.pdf"
+        title="Estrategias Adaptativas"
+      />
+    </div>
 
-      <!-- Estrategias DA (Supervivencia) -->
-      <div class="content-card border-l-4 border-matrix-debilidad">
-        <h4 class="text-matrix-debilidad font-bold mb-3">Estrategias DA - Supervivencia</h4>
-        <p class="text-sm text-text-muted mb-3">Reducir debilidades y evitar amenazas</p>
-        <ul class="space-y-2 text-sm">
-          <li>• Establecer alianzas financieras para mitigar tasas de interés</li>
-          <li>• Coberturas cambiarias para reducir volatilidad del dólar</li>
-          <li>• Diversificar líneas de negocio (financiamiento, seguros)</li>
-        </ul>
+    <!-- 2.7.4 Estrategias de Supervivencia -->
+    <div class="mb-10">
+      <h3 class="text-xl font-bold mb-4 text-primary-azul">
+        2.7.4 Estrategias de Supervivencia
+      </h3>
+      <PDFViewer
+        pdfPath="/data/Ingenieria-Admistracion2025/Ingenieria-Admistracion2025/EstrategiasSupervivencia.pdf"
+        title="Estrategias de Supervivencia"
+      />
+    </div>
+
+    <!-- 2.7.5 Matriz CAME -->
+    <div class="mb-10">
+      <h3 class="text-xl font-bold mb-4 text-primary-azul">
+        2.7.5 Matriz CAME
+      </h3>
+      <PDFViewer
+        pdfPath="/data/Ingenieria-Admistracion2025/Ingenieria-Admistracion2025/MatrizCame.pdf"
+        title="Matriz CAME"
+      />
+    </div>
+  </section>
+
+  <!-- 2.8 Mapa Estratégico -->
+  <section id="mapa-estrategico" class="mb-12">
+    <h2>2.8 Mapa Estratégico</h2>
+    <div class="content-card mt-6">
+      <div
+        class="bg-white p-4 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden"
+      >
+        <img
+          src="/data/Ingenieria-Admistracion2025/Ingenieria-Admistracion2025/Mapa-Estrategico.png"
+          alt="Mapa Estratégico de Incamotors"
+          class="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
+        />
       </div>
     </div>
   </section>
 
   <!-- Navegación -->
   <div class="flex justify-between mt-12 pt-8 border-t border-docs-border">
-    <a href="/capitulo-1" class="text-primary-azul hover:text-primary-hover">
-      ← Capítulo I: Aspectos Generales
+    <a
+      href="/capitulo-1"
+      class="text-primary-azul hover:text-primary-hover flex items-center gap-2"
+    >
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+        ><path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M15 19l-7-7 7-7"></path></svg
+      >
+      Capítulo I: Aspectos Generales
     </a>
-    <a href="/capitulo-3" class="text-primary-azul hover:text-primary-hover">
-      Capítulo III: Análisis Interno →
+    <a
+      href="/capitulo-3"
+      class="text-primary-azul hover:text-primary-hover flex items-center gap-2"
+    >
+      Capítulo III: Dirección Estratégica
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+        ><path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M9 5l7 7-7 7"></path></svg
+      >
     </a>
   </div>
 </DocsLayout>

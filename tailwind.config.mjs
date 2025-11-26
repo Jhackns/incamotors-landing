@@ -23,6 +23,9 @@ export default {
           hover: '#2563EB',     // blue-600
           gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
         },
+        secondary: {
+          gold: '#cb9f51',      // User requested gold
+        },
         accent: {
           plata: '#94A3B8',     // slate-400
           purple: '#A855F7',    // purple-500
@@ -46,6 +49,7 @@ export default {
       },
       fontFamily: {
         inter: ['Inter Variable', 'Inter', 'sans-serif'],
+        playfair: ['"Playfair Display"', 'serif'],
         mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
       },
       spacing: {

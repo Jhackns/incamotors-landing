@@ -1,219 +1,344 @@
 ---
-import DocsLayout from '../layouts/DocsLayout.astro';
+import DocsLayout from "../layouts/DocsLayout.astro";
 ---
 
 <DocsLayout title="Capítulo I: Aspectos Generales" currentPath="/capitulo-1">
   <!-- Introducción -->
   <section class="content-card">
-    <h2>Aspectos Generales de la Empresa</h2>
+    <h2>1. Aspectos Generales de la Empresa</h2>
     <p class="text-lg mt-4">
-      Este capítulo presenta los aspectos fundamentales de Automotriz Incamotors S.A.C., incluyendo su trayectoria 
-      histórica, identidad corporativa y estructura organizacional.
+      Este capítulo presenta los aspectos fundamentales de Automotriz Incamotors
+      S.A.C., incluyendo su trayectoria histórica, ubicación, estructura y
+      posicionamiento en el mercado.
     </p>
   </section>
 
-  <!-- Reseña Histórica -->
-  <section id="historia" class="mt-12">
-    <h2>1.1 Reseña Histórica</h2>
-    
+  <!-- 1.1 Reseña Histórica -->
+  <section id="resena-historica" class="mt-12">
+    <h2>1.1. Reseña Histórica de la Empresa</h2>
+
     <div class="mt-6 space-y-6">
       <div class="content-card">
         <h4 class="text-primary-azul">Origen: Grupo Autrisa (1870)</h4>
         <p class="mt-2">
-          La historia de Incamotors S.A.C. se remonta a 1870 con el establecimiento del Grupo Autrisa, 
-          una tradición familiar emblemática en Arequipa que ha estado vinculada al sector comercial y 
-          de servicios por más de 150 años.
+          La historia de Incamotors S.A.C. se remonta a 1870 con el
+          establecimiento del Grupo Autrisa, una tradición familiar emblemática
+          en Arequipa que ha estado vinculada al sector comercial y de servicios
+          por más de 150 años.
         </p>
       </div>
 
       <div class="content-card">
-        <h4 class="text-primary-azul">Expansión y Diversificación (1970-1973)</h4>
+        <h4 class="text-primary-azul">
+          Expansión y Diversificación (1970-1973)
+        </h4>
         <p class="mt-2">
-          En 1970, el grupo experimentó una escisión de la empresa matriz, iniciando un proceso de expansión 
-          y diversificación. En 1973, obtuvieron la distribución de Volvo para las regiones de Arequipa, Cusco y Puno, 
-          marcando su entrada formal al sector automotriz.
+          En 1970, el grupo experimentó una escisión de la empresa matriz,
+          iniciando un proceso de expansión y diversificación. En 1973,
+          obtuvieron la distribución de Volvo para las regiones de Arequipa,
+          Cusco y Puno, marcando su entrada formal al sector automotriz.
         </p>
       </div>
 
       <div class="content-card">
         <h4 class="text-primary-azul">Fundación de Incamotors (2009)</h4>
         <p class="mt-2">
-          El <strong>7 de agosto de 2009</strong>, se constituye formalmente <strong>Automotriz Incamotors S.A.C.</strong> 
-          como una sociedad anónima cerrada, consolidando la experiencia acumulada del grupo familiar en el rubro automotriz 
-          bajo una nueva estructura corporativa enfocada en la comercialización y servicios.
+          El <strong>7 de agosto de 2009</strong>, se constituye formalmente <strong
+            >Automotriz Incamotors S.A.C.</strong
+          >
+          como una sociedad anónima cerrada, consolidando la experiencia acumulada
+          del grupo familiar en el rubro automotriz bajo una nueva estructura corporativa
+          enfocada en la comercialización y servicios.
         </p>
-      </div>
-
-      <div class="content-card">
-        <h4 class="text-primary-azul">Crecimiento Regional (2017-2023)</h4>
-        <p class="mt-2">
-          En 2017, Incamotors asume la operación del concesionario Ford integral en Ica, expandiendo su presencia nacional. 
-          Para 2023, la empresa consolida su liderazgo regional con ventas de 70 unidades mensuales en Ica y una red de 
-          8 sedes a nivel nacional.
-        </p>
-      </div>
-    </div>
-
-    <!-- Timeline -->
-    <div class="mt-8 border-l-2 border-primary-azul pl-6 space-y-6">
-      {[
-        { year: "1870", event: "Origen del Grupo Autrisa" },
-        { year: "1973", event: "Distribución Volvo (Arequipa, Cusco, Puno)" },
-        { year: "2009", event: "Fundación oficial de Incamotors S.A.C." },
-        { year: "2017", event: "Expansión a Ica (Ford)" },
-        { year: "2023", event: "70 unidades/mes - Consolidación regional" }
-      ].map((item) => (
-        <div class="relative">
-          <div class="absolute -left-9 w-4 h-4 bg- primary-azul rounded-full border-4 border-docs-bg"></div>
-          <div>
-            <span class="text-primary-azul font-bold">{item.year}</span>
-            <p class="text-text-secundario mt-1">{item.event}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-  </section>
-
-  <!-- Identidad Corporativa -->
-  <section id="identidad" class="mt-12">
-    <h2>1.2 Identidad Corporativa</h2>
-    
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
-      <!-- Misión -->
-      <div class="content-card border-l-4 border-matrix-oportunidad">
-        <h3 class="text-matrix-oportunidad">🎯 Misión</h3>
-        <p class="mt-4 leading-relaxed">
-          "Somos una organización pujante y en crecimiento, orientada a la satisfacción de nuestros clientes 
-          y a la creación de valor para nuestros accionistas, colaboradores y comunidad."
-        </p>
-      </div>
-
-      <!-- Visión -->
-      <div class="content-card border-l-4 border-matrix-fortaleza">
-        <h3 class="text-matrix-fortaleza">🔭 Visión</h3>
-        <p class="mt-4 leading-relaxed">
-          "Ser el grupo empresarial líder del Perú en ofrecer soluciones en el mundo de la movilidad, 
-          reconocidos por brindar un servicio integral y de excelente calidad."
-        </p>
-      </div>
-    </div>
-
-    <!-- Valores -->
-    <div class="mt-8">
-      <h3 class="mb-6">Valores Organizacionales</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {[
-          { title: "Actitud", desc: "Disposición positiva frente a los retos", icon: "💪" },
-          { title: "Superación", desc: "Búsqueda de mejora constante", icon: "📈" },
-          { title: "Compromiso", desc: "Responsabilidad con clientes y empresa", icon: "🤝" },
-          { title: "Calidad", desc: "Productos y servicios de alto nivel", icon: "⭐" },
-          { title: "Integridad", desc: "Actuar con ética y transparencia", icon: "✅" }
-        ].map((valor) => (
-          <div class="content-card text-center hover:border-primary-azul transition-colors">
-            <div class="text-4xl mb-2">{valor.icon}</div>
-            <h4 class="font-semibold text-text-principal">{valor.title}</h4>
-            <p class="text-sm text-text-muted mt-2">{valor.desc}</p>
-          </div>
-        ))}
       </div>
     </div>
   </section>
 
-  <!-- Organigrama -->
-  <section id="organigrama" class="mt-12">
-    <h2>1.3 Estructura Organizacional</h2>
-    <p class="mt-4">
-      Incamotors S.A.C. cuenta con una estructura organizacional jerárquica que garantiza la eficiencia operativa 
-      y la comunicación efectiva en todos los niveles.
-    </p>
+  <!-- 1.2 Ubicación Geográfica -->
+  <section id="ubicacion" class="mt-12">
+    <h2>1.2. Ubicación Geográfica</h2>
+    <div class="content-card mt-6">
+      <p>
+        La sede principal de Automotriz Incamotors S.A.C. se encuentra
+        estratégicamente ubicada en la ciudad de Arequipa, siendo el eje central
+        de sus operaciones en el sur del país.
+      </p>
+      <ul class="mt-4 list-disc list-inside text-text-secundario">
+        <li>
+          <strong>Dirección Principal:</strong> Av. Parra 122, Arequipa, Perú
+        </li>
+        <li><strong>Región:</strong> Arequipa</li>
+        <li><strong>País:</strong> Perú</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 1.3 Locales, filiales, Mapa -->
+  <section id="mapa" class="mt-12">
+    <h2>1.3. Locales, Filiales, Mapa de Lugares Geográficos</h2>
 
     <div class="content-card mt-6">
-      <h4>Niveles Organizativos</h4>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
-        <div class="p-4 bg-docs-hover rounded">
-          <h5 class="font-semibold text-matrix-fortaleza">Nivel Estratégico</h5>
-          <p class="text-sm text-text-muted mt-2">Gerente General</p>
-        </div>
-        <div class="p-4 bg-docs-hover rounded">
-          <h5 class="font-semibold text-matrix-oportunidad">Nivel Táctico</h5>
-          <p class="text-sm text-text-muted mt-2">Gerencias Corporativa, Administrativa y Secretaría</p>
-        </div>
-        <div class="p-4 bg-docs-hover rounded">
-          <h5 class="font-semibold text-primary-azul">Nivel Operativo</h5>
-          <p class="text-sm text-text-muted mt-2">Jefaturas y Supervisores</p>
-        </div>
+      <div
+        class="bg-white p-4 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden mb-6"
+      >
+        <img
+          src="/data/Ingenieria-Admistracion2025/Ingenieria-Admistracion2025/ubicacionesMapa.png"
+          alt="Mapa de Ubicaciones Incamotors"
+          class="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
+        />
+      </div>
+
+      <div
+        class="bg-slate-50 dark:bg-slate-900 p-6 rounded-xl border-l-4 border-primary-azul"
+      >
+        <h4 class="text-lg font-bold mb-4 text-primary-azul">
+          Sedes y Filiales
+        </h4>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <li class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-primary-azul"></span>
+            <span class="font-medium">Arequipa (Sede Principal)</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-accent-amber"></span>
+            <span>Cusco</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-accent-emerald"></span>
+            <span>Ica y Chincha</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-accent-purple"></span>
+            <span>Piura</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-accent-cyan"></span>
+            <span>Puno y Juliaca</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-red-500"></span>
+            <span>Trujillo</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1.4 Marcas, emblemas y logotipos -->
+  <section id="marcas" class="mt-12">
+    <h2>1.4. Marcas, Emblemas y Logotipos</h2>
+
+    <div class="content-card mt-6 text-center">
+      <div class="bg-white p-8 rounded-lg inline-block mb-6">
+        <img
+          src="/data/Ingenieria-Admistracion2025/Ingenieria-Admistracion2025/logo.png"
+          alt="Logo Incamotors"
+          class="h-32 w-auto object-contain mx-auto"
+        />
+      </div>
+      <p class="text-left mt-4">
+        El logotipo de Incamotors representa la solidez y la trayectoria de la
+        empresa, utilizando colores corporativos que transmiten confianza y
+        profesionalismo en el sector automotriz.
+      </p>
+    </div>
+
+    <!-- 1.4.2 Marcas que representa -->
+    <div class="mt-8">
+      <h3 class="text-xl font-bold text-primary-azul mb-4">
+        1.4.2. Marcas que representa Incamotors
+      </h3>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {
+          [
+            "Toyota",
+            "Ford",
+            "Hyundai",
+            "Nissan",
+            "Chevrolet",
+            "Mitsubishi",
+            "Jeep",
+            "Ram",
+            "Fiat",
+            "Isuzu",
+            "Fuso",
+            "Geely",
+            "Chery",
+            "Volvo",
+            "Maxus",
+            "JMC",
+          ].map((brand) => (
+            <div class="p-4 bg-white dark:bg-slate-800 rounded-lg border border-gray-200 dark:border-gray-700 flex items-center justify-center shadow-sm hover:shadow-md transition-shadow">
+              <span class="font-bold text-gray-700 dark:text-gray-300">
+                {brand}
+              </span>
+            </div>
+          ))
+        }
       </div>
     </div>
 
-    <!-- Organigrama Image -->
+    <!-- 1.4.3 Interpretación General -->
     <div class="mt-8 content-card">
-      <h4 class="mb-4">Organigrama Jerárquico</h4>
-      <div class="bg-docs-hover rounded-lg p-4">
-        <img 
-          src="/data/Ingenieria-Admistracion2025/Ingenieria-Admistracion2025/Organigrama.png" 
-          alt="Organigrama de Incamotors S.A.C."
-          class="w-full h-auto rounded"
-        />
-      </div>
-      <p class="text-sm text-text-muted mt-2 text-center">
-        Figura 1.1: Estructura organizacional jerárquica de Incamotors S.A.C.
+      <h3 class="text-xl font-bold text-primary-azul mb-4">
+        1.4.3. Interpretación General
+      </h3>
+      <p>
+        La diversidad de marcas representadas permite a Incamotors cubrir
+        diferentes segmentos del mercado, desde vehículos económicos hasta
+        líneas de lujo y comerciales, fortaleciendo su posición competitiva.
       </p>
     </div>
   </section>
 
-  <!-- Datos Clave -->
-  <section class="mt-12">
-    <h2>1.4 Datos Generales de la Empresa</h2>
-    
-    <table class="matrix-table mt-6">
-      <tbody>
-        <tr>
-          <td class="font-semibold">Razón Social</td>
-          <td>Automotriz Incamotors S.A.C.</td>
-        </tr>
-        <tr>
-          <td class="font-semibold">Tipo de Sociedad</td>
-          <td>Sociedad Anónima Cerrada</td>
-        </tr>
-        <tr>
-          <td class="font-semibold">Fecha de Fundación</td>
-          <td>7 de Agosto de 2009</td>
-        </tr>
-        <tr>
-          <td class="font-semibold">Ubicación Principal</td>
-          <td>Av. Parra 122, Arequipa, Perú</td>
-        </tr>
-        <tr>
-          <td class="font-semibold">Número de Colaboradores</td>
-          <td>221 trabajadores</td>
-        </tr>
-        <tr>
-          <td class="font-semibold">Sedes a Nivel Nacional</td>
-          <td>8 sedes</td>
-        </tr>
-        <tr>
-          <td class="font-semibold">Marcas Representadas</td>
-          <td>15+ (Toyota, Ford, Hyundai, Nissan, Chevrolet, Mitsubishi, Jeep, Ram, Fiat, Isuzu, Fuso, Geely, Chery, Maxus, JMC, Volvo, Mobil)</td>
-        </tr>
-        <tr>
-          <td class="font-semibold">Certificación</td>
-          <td>ISO 9001:2008</td>
-        </tr>
-        <tr>
-          <td class="font-semibold">Actividad Principal</td>
-          <td>Comercialización de vehículos nuevos y seminuevos, servicios postventa, repuestos y accesorios</td>
-        </tr>
-      </tbody>
-    </table>
+  <!-- 1.5 Número de Trabajadores -->
+  <section id="trabajadores" class="mt-12">
+    <h2>1.5. Número de Trabajadores</h2>
+
+    <div class="content-card mt-6">
+      <p class="mb-6">
+        Incamotors cuenta con un equipo humano de aproximadamente <strong
+          >221 colaboradores</strong
+        > distribuidos en sus diferentes sedes.
+      </p>
+
+      <div
+        class="bg-white p-4 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden mb-6"
+      >
+        <img
+          src="/data/Ingenieria-Admistracion2025/Ingenieria-Admistracion2025/organigramaEstructura.png"
+          alt="Estructura de Personal Incamotors"
+          class="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
+        />
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div
+          class="p-4 bg-slate-50 dark:bg-slate-900 rounded-lg border-l-4 border-matrix-fortaleza"
+        >
+          <h4 class="font-bold mb-2">i) Alta Dirección</h4>
+          <p class="text-sm text-text-secundario">
+            Conformada por la Gerencia General y el Directorio, encargados de la
+            toma de decisiones estratégicas.
+          </p>
+        </div>
+        <div
+          class="p-4 bg-slate-50 dark:bg-slate-900 rounded-lg border-l-4 border-primary-azul"
+        >
+          <h4 class="font-bold mb-2">ii) Jefaturas y Coordinación</h4>
+          <p class="text-sm text-text-secundario">
+            Líderes de áreas funcionales (Ventas, Postventa, Administración) que
+            aseguran la ejecución operativa.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1.6 Razón Social y Jurídica -->
+  <section id="razon-social" class="mt-12">
+    <h2>1.6. Razón Social y Jurídica</h2>
+    <div class="content-card mt-6">
+      <table class="w-full text-left">
+        <tbody>
+          <tr class="border-b border-gray-200 dark:border-gray-700">
+            <td class="py-3 font-semibold text-primary-azul">Razón Social</td>
+            <td class="py-3">Automotriz Incamotors S.A.C.</td>
+          </tr>
+          <tr>
+            <td class="py-3 font-semibold text-primary-azul">Tipo Jurídico</td>
+            <td class="py-3">Sociedad Anónima Cerrada</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 1.7 Mercado que Abastece -->
+  <section id="mercado" class="mt-12">
+    <h2>1.7. Mercado que Abastece</h2>
+    <div class="content-card mt-6">
+      <p>
+        El mercado objetivo comprende personas naturales y jurídicas en el sur
+        del Perú (Arequipa, Cusco, Puno, Ica, etc.) que requieren soluciones de
+        movilidad, transporte comercial y servicios de mantenimiento automotriz.
+      </p>
+    </div>
+  </section>
+
+  <!-- 1.8 Principales Proveedores -->
+  <section id="proveedores" class="mt-12">
+    <h2>1.8. Principales Proveedores</h2>
+    <div class="content-card mt-6">
+      <p>
+        Los principales proveedores son las marcas fabricantes e importadoras de
+        vehículos (Toyota del Perú, Ford Perú, etc.) así como proveedores de
+        repuestos, aceites (Mobil) y accesorios.
+      </p>
+    </div>
+  </section>
+
+  <!-- 1.9 Productos y Servicios -->
+  <section id="productos" class="mt-12">
+    <h2>1.9. Productos y Servicios Ofrecidos</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+      <div class="content-card text-center">
+        <h4 class="text-primary-azul mb-2">Venta de Vehículos</h4>
+        <p class="text-sm">Nuevos y Seminuevos</p>
+      </div>
+      <div class="content-card text-center">
+        <h4 class="text-primary-azul mb-2">Postventa</h4>
+        <p class="text-sm">Mantenimiento y Reparación</p>
+      </div>
+      <div class="content-card text-center">
+        <h4 class="text-primary-azul mb-2">Repuestos</h4>
+        <p class="text-sm">Venta de partes y accesorios genuinos</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1.10 Afiches y Web -->
+  <section id="web" class="mt-12">
+    <h2>1.10. Afiches y Página Web de la Empresa</h2>
+    <div class="content-card mt-6 text-center">
+      <p class="mb-4">Para más información comercial y promociones vigentes:</p>
+      <a
+        href="https://www.incamotors.com"
+        target="_blank"
+        class="inline-block px-6 py-3 bg-primary-azul text-white rounded-lg hover:bg-primary-hover transition-colors"
+      >
+        Visitar www.incamotors.com
+      </a>
+    </div>
   </section>
 
   <!-- Navegación -->
   <div class="flex justify-between mt-12 pt-8 border-t border-docs-border">
-    <a href="/" class="text-primary-azul hover:text-primary-hover">
-      ← Inicio
+    <a
+      href="/"
+      class="text-primary-azul hover:text-primary-hover flex items-center gap-2"
+    >
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+        ><path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M15 19l-7-7 7-7"></path></svg
+      >
+      Inicio
     </a>
-    <a href="/capitulo-2" class="text-primary-azul hover:text-primary-hover">
-      Capítulo II: Análisis Estratégico →
+    <a
+      href="/capitulo-2"
+      class="text-primary-azul hover:text-primary-hover flex items-center gap-2"
+    >
+      Capítulo II: Análisis Estratégico
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+        ><path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M9 5l7 7-7 7"></path></svg
+      >
     </a>
   </div>
 </DocsLayout>
