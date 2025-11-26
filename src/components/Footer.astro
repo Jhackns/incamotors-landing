@@ -1,5 +1,13 @@
 ---
-import { MapPin, Phone, Mail, Globe, Facebook, Instagram, Linkedin } from 'lucide-react';
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Globe,
+  Facebook,
+  Instagram,
+  Linkedin,
+} from "lucide-react";
 
 // Contact information from PDF
 const contactInfo = {
@@ -7,14 +15,19 @@ const contactInfo = {
   phone: "+54 205-400",
   email: "info@incamotors.com.pe",
   website: "https://www.incamotors.com.pe/",
-  ruc: "20123456789"
+  ruc: "20123456789",
 };
 
 // Social media links (placeholders)
 const socialLinks = [
   { name: "Facebook", icon: Facebook, url: "#", color: "hover:text-blue-400" },
-  { name: "Instagram", icon: Instagram, url: "#", color: "hover:text-pink-400" },
-  { name: "LinkedIn", icon: Linkedin, url: "#", color: "hover:text-blue-500" }
+  {
+    name: "Instagram",
+    icon: Instagram,
+    url: "#",
+    color: "hover:text-pink-400",
+  },
+  { name: "LinkedIn", icon: Linkedin, url: "#", color: "hover:text-blue-500" },
 ];
 
 // Quick navigation links
@@ -23,13 +36,28 @@ const navLinks = [
   { name: "Historia", href: "#historia" },
   { name: "Organización", href: "#organizacion" },
   { name: "Servicios", href: "#servicios" },
-  { name: "FODA", href: "#foda" }
+  { name: "FODA", href: "#foda" },
 ];
 
 // Brands for the footer
 const footerBrands = [
-  "Toyota", "Hyundai", "Ford", "Nissan", "Chevrolet", "Mitsubishi",
-  "Jeep", "Ram", "Fiat", "Isuzu", "Fuso", "Geely", "Chery", "Maxus", "JMC", "Volvo", "Mobil"
+  "Toyota",
+  "Hyundai",
+  "Ford",
+  "Nissan",
+  "Chevrolet",
+  "Mitsubishi",
+  "Jeep",
+  "Ram",
+  "Fiat",
+  "Isuzu",
+  "Fuso",
+  "Geely",
+  "Chery",
+  "Maxus",
+  "JMC",
+  "Volvo",
+  "Mobil",
 ];
 ---
 
@@ -37,40 +65,50 @@ const footerBrands = [
   <!-- Main Footer Content -->
   <div class="section-padding pt-16 pb-8">
     <div class="container-custom">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-        
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12"
+      >
         <!-- Company Info & Contact -->
         <div class="space-y-6 scroll-fade-in">
           <div>
-            <h3 class="text-2xl font-bold text-text-principal mb-4">Incamotors S.A.C.</h3>
+            <h3 class="text-2xl font-bold text-text-principal mb-4">
+              Incamotors S.A.C.
+            </h3>
             <p class="text-text-secundario leading-relaxed mb-6">
-              Líderes en soluciones integrales de movilidad en el sur del Perú. 
+              Líderes en soluciones integrales de movilidad en el sur del Perú.
               Más de 48 años de experiencia respaldando tu confianza.
             </p>
           </div>
-          
+
           <div class="space-y-4">
             <div class="flex items-start gap-3">
-              <MapPin className="w-5 h-5 text-primary-azul mt-1 flex-shrink-0" />
+              <MapPin
+                className="w-5 h-5 text-primary-azul mt-1 flex-shrink-0"
+              />
               <div>
-                <p class="text-text-principal font-medium">{contactInfo.address}</p>
+                <p class="text-text-principal font-medium">
+                  {contactInfo.address}
+                </p>
               </div>
             </div>
-            
+
             <div class="flex items-center gap-3">
               <Phone className="w-5 h-5 text-primary-azul flex-shrink-0" />
               <p class="text-text-principal">{contactInfo.phone}</p>
             </div>
-            
+
             <div class="flex items-center gap-3">
               <Mail className="w-5 h-5 text-primary-azul flex-shrink-0" />
               <p class="text-text-principal">{contactInfo.email}</p>
             </div>
-            
+
             <div class="flex items-center gap-3">
               <Globe className="w-5 h-5 text-primary-azul flex-shrink-0" />
-              <a href={contactInfo.website} class="text-text-principal hover:text-primary-azul transition-colors">
-                {contactInfo.website.replace('https://', '')}
+              <a
+                href={contactInfo.website}
+                class="text-text-principal hover:text-primary-azul transition-colors"
+              >
+                {contactInfo.website.replace("https://", "")}
               </a>
             </div>
           </div>
@@ -78,23 +116,28 @@ const footerBrands = [
 
         <!-- Quick Navigation -->
         <div class="space-y-6 scroll-fade-in delay-100">
-          <h3 class="text-xl font-semibold text-text-principal">Enlaces Rápidos</h3>
+          <h3 class="text-xl font-semibold text-text-principal">
+            Enlaces Rápidos
+          </h3>
           <nav class="space-y-3">
-            {navLinks.map((link, index) => (
-              <a
-                key={index}
-                href={link.href}
-                class="block text-text-secundario hover:text-primary-azul transition-colors duration-300"
-              >
-                {link.name}
-              </a>
-            ))}
+            {
+              navLinks.map((link, index) => (
+                <a
+                  href={link.href}
+                  class="block text-text-secundario hover:text-primary-azul transition-colors duration-300"
+                >
+                  {link.name}
+                </a>
+              ))
+            }
           </nav>
         </div>
 
         <!-- Services -->
         <div class="space-y-6 scroll-fade-in delay-200">
-          <h3 class="text-xl font-semibold text-text-principal">Servicios Principales</h3>
+          <h3 class="text-xl font-semibold text-text-principal">
+            Servicios Principales
+          </h3>
           <ul class="space-y-3 text-text-secundario">
             <li>• Venta de Vehículos Nuevos</li>
             <li>• Vehículos Seminuevos Certificados</li>
@@ -107,32 +150,41 @@ const footerBrands = [
 
         <!-- Brands & Social -->
         <div class="space-y-6 scroll-fade-in delay-300">
-          <h3 class="text-xl font-semibold text-text-principal">Marcas Representadas</h3>
+          <h3 class="text-xl font-semibold text-text-principal">
+            Marcas Representadas
+          </h3>
           <div class="grid grid-cols-3 gap-2 text-xs text-text-secundario">
-            {footerBrands.slice(0, 12).map((brand, index) => (
-              <div key={index} class="text-center p-2 hover:text-accent-plata transition-colors">
-                {brand}
-              </div>
-            ))}
+            {
+              footerBrands
+                .slice(0, 12)
+                .map((brand, index) => (
+                  <div class="text-center p-2 hover:text-accent-plata transition-colors">
+                    {brand}
+                  </div>
+                ))
+            }
           </div>
-          
+
           <!-- Social Media Links -->
           <div class="pt-4">
-            <h4 class="text-lg font-medium text-text-principal mb-4">Síguenos</h4>
+            <h4 class="text-lg font-medium text-text-principal mb-4">
+              Síguenos
+            </h4>
             <div class="flex gap-4">
-              {socialLinks.map((social, index) => {
-                const Icon = social.icon;
-                return (
-                  <a
-                    key={index}
-                    href={social.url}
-                    class={`p-2 rounded-lg bg-glass-fill border border-glass-border text-text-secundario ${social.color} transition-colors duration-300 hover:border-accent-plata/40`}
-                    aria-label={social.name}
-                  >
-                    <Icon className="w-5 h-5" />
-                  </a>
-                );
-              })}
+              {
+                socialLinks.map((social, index) => {
+                  const Icon = social.icon;
+                  return (
+                    <a
+                      href={social.url}
+                      class={`p-2 rounded-lg bg-glass-fill border border-glass-border text-text-secundario ${social.color} transition-colors duration-300 hover:border-accent-plata/40`}
+                      aria-label={social.name}
+                    >
+                      <Icon className="w-5 h-5" />
+                    </a>
+                  );
+                })
+              }
             </div>
           </div>
         </div>
@@ -141,14 +193,20 @@ const footerBrands = [
   </div>
 
   <!-- Bottom Bar -->
-  <div class="border-t border-glass-border bg-background scroll-fade-in delay-400">
+  <div
+    class="border-t border-glass-border bg-background scroll-fade-in delay-400"
+  >
     <div class="container-custom">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-4 py-6">
+      <div
+        class="flex flex-col md:flex-row justify-between items-center gap-4 py-6"
+      >
         <div class="text-text-secundario text-sm">
           © 2024 Incamotors S.A.C. Todos los derechos reservados.
         </div>
-        
-        <div class="flex flex-col md:flex-row items-center gap-4 text-sm text-text-secundario">
+
+        <div
+          class="flex flex-col md:flex-row items-center gap-4 text-sm text-text-secundario"
+        >
           <div>RUC: {contactInfo.ruc}</div>
           <div class="hidden md:block">•</div>
           <div>Arequipa, Perú</div>
@@ -158,10 +216,14 @@ const footerBrands = [
   </div>
 
   <!-- Additional Info -->
-  <div class="border-t border-glass-border bg-background-surface scroll-fade-in delay-500">
+  <div
+    class="border-t border-glass-border bg-background-surface scroll-fade-in delay-500"
+  >
     <div class="container-custom">
       <div class="py-4">
-        <div class="flex flex-col md:flex-row justify-between items-center gap-2 text-xs text-text-secundario text-center md:text-left">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center gap-2 text-xs text-text-secundario text-center md:text-left"
+        >
           <div>Automotriz Incamotors S.A.C. - Sociedad Anónima Cerrada</div>
           <div>Certificación ISO 9001:2008 en comercialización y servicios</div>
         </div>
@@ -176,8 +238,8 @@ const footerBrands = [
     transform: translateY(-1px);
     transition: all 0.3s ease;
   }
-  
+
   .brand-grid:hover .hover\:text-accent-plata:hover {
-    color: #C0C0C0;
+    color: #c0c0c0;
   }
 </style>
