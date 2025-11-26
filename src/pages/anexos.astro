@@ -1,5 +1,5 @@
 ---
-import DocsLayout from '../layouts/DocsLayout.astro';
+import DocsLayout from "../layouts/DocsLayout.astro";
 ---
 
 <DocsLayout title="Anexos" currentPath="/anexos">
@@ -7,7 +7,8 @@ import DocsLayout from '../layouts/DocsLayout.astro';
   <section class="content-card">
     <h2>Anexos y Evidencias</h2>
     <p class="text-lg mt-4">
-      Esta sección contiene las evidencias fotográficas y documentación de respaldo utilizadas en el análisis organizacional de Incamotors S.A.C.
+      Esta sección contiene las evidencias fotográficas y documentación de
+      respaldo utilizadas en el análisis organizacional de Incamotors S.A.C.
     </p>
   </section>
 
@@ -15,30 +16,51 @@ import DocsLayout from '../layouts/DocsLayout.astro';
   <section id="evidencias" class="mt-12">
     <h2>Evidencias Fotográficas</h2>
     <p class="mt-4">
-      A continuación se presentan las evidencias visuales de las instalaciones y operaciones de Incamotors S.A.C.
+      A continuación se presentan las evidencias visuales de las instalaciones y
+      operaciones de Incamotors S.A.C.
     </p>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-      {[
-        { src: "/data/Ingenieria-Admistracion2025/Ingenieria-Admistracion2025/EVIDENCIAS/evidencias1.jpeg", caption: "Evidencia 1: Instalaciones" },
-        { src: "/data/Ingenieria-Admistracion2025/Ingenieria-Admistracion2025/EVIDENCIAS/Imagen de WhatsApp 2025-11-04 a las 16.22.58_2a27e4ec.jpg", caption: "Evidencia 2: Área operativa" },
-        { src: "/data/Ingenieria-Admistracion2025/Ingenieria-Admistracion2025/EVIDENCIAS/Imagen de WhatsApp 2025-11-04 a las 16.22.58_fa5c3ca1.jpg", caption: "Evidencia 3: Showroom" },
-        { src: "/data/Ingenieria-Admistracion2025/Ingenieria-Admistracion2025/EVIDENCIAS/Imagen de WhatsApp 2025-11-04 a las 16.22.59_7c16520e.jpg", caption: "Evidencia 4: Taller de servicio" },
-        { src: "/data/Ingenieria-Admistracion2025/Ingenieria-Admistracion2025/EVIDENCIAS/Imagen de WhatsApp 2025-11-04 a las 16.22.59_ae587ae1.jpg", caption: "Evidencia 5: Área de repuestos" },
-        { src: "/data/Ingenieria-Admistracion2025/Ingenieria-Admistracion2025/EVIDENCIAS/Imagen de WhatsApp 2025-11-04 a las 16.22.59_b36e7a97.jpg", caption: "Evidencia 6: Instalaciones generales" }
-      ].map((img) => (
-        <div class="content-card group hover:border-primary-azul transition-colors">
-          <div class="aspect-video bg-docs-hover rounded overflow-hidden mb-3">
-            <img 
-              src={img.src} 
-              alt={img.caption}
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-              loading="lazy"
-            />
+      {
+        [
+          {
+            src: "/assets/images/evidencias/evidencias1.jpeg",
+            caption: "Evidencia 1: Instalaciones",
+          },
+          {
+            src: "/assets/images/evidencias/Imagen de WhatsApp 2025-11-04 a las 16.22.58_2a27e4ec.jpg",
+            caption: "Evidencia 2: Área operativa",
+          },
+          {
+            src: "/assets/images/evidencias/Imagen de WhatsApp 2025-11-04 a las 16.22.58_fa5c3ca1.jpg",
+            caption: "Evidencia 3: Showroom",
+          },
+          {
+            src: "/assets/images/evidencias/Imagen de WhatsApp 2025-11-04 a las 16.22.59_7c16520e.jpg",
+            caption: "Evidencia 4: Taller de servicio",
+          },
+          {
+            src: "/assets/images/evidencias/Imagen de WhatsApp 2025-11-04 a las 16.22.59_ae587ae1.jpg",
+            caption: "Evidencia 5: Área de repuestos",
+          },
+          {
+            src: "/assets/images/evidencias/Imagen de WhatsApp 2025-11-04 a las 16.22.59_b36e7a97.jpg",
+            caption: "Evidencia 6: Instalaciones generales",
+          },
+        ].map((img) => (
+          <div class="content-card group hover:border-primary-azul transition-colors">
+            <div class="aspect-video bg-docs-hover rounded overflow-hidden mb-3">
+              <img
+                src={img.src}
+                alt={img.caption}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+            </div>
+            <p class="text-sm text-text-muted text-center">{img.caption}</p>
           </div>
-          <p class="text-sm text-text-muted text-center">{img.caption}</p>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </section>
 
@@ -50,36 +72,80 @@ import DocsLayout from '../layouts/DocsLayout.astro';
     </p>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
-      {[
-        { name: "Aspectos generales - Automotriz Incamotors S.A.C.pdf", path: "/data/Aspectos generales - Automotriz Incamotors S.A.C.pdf", type: "PDF" },
-        { name: "Análisis Externo EFE y PESTEL", path: "/data/Ingenieria-Admistracion2025/Ingenieria-Admistracion2025/ANALISIS EXTERNO EFEy pestel .xlsx", type: "Excel" },
-        { name: "Análisis Interno", path: "/data/Ingenieria-Admistracion2025/Ingenieria-Admistracion2025/analisis interno.xlsx", type: "Excel" },
-        { name: "Matriz CAME", path: "/data/Ingenieria-Admistracion2025/Ingenieria-Admistracion2025/Matriz CAME -  Ultimo .xlsx", type: "Excel" },
-        { name: "Cadena de Valor", path: "/data/Ingenieria-Admistracion2025/Ingenieria-Admistracion2025/Cadena de valor.xlsx", type: "Excel" },
-        { name: "Mapa Estratégico", path: "/data/Ingenieria-Admistracion2025/Ingenieria-Admistracion2025/mapa estrategico.xlsx", type: "Excel" },
-        { name: "Plan Estratégico Incamotors 2021-2024", path: "/data/Ingenieria-Admistracion2025/Ingenieria-Admistracion2025/Plan_Estrategico_Incamotors_2021_2024.docx", type: "Word" },
-        { name: "Planeamiento Estratégico Incamotors", path: "/data/Ingenieria-Admistracion2025/Ingenieria-Admistracion2025/Planeamiento_estrategico_Incamotors.docx", type: "Word" }
-      ].map((doc) => (
-        <a 
-          href={doc.path} 
-          download
-          class="content-card flex items-start gap-4 hover:border-primary-azul transition-colors group"
-        >
-          <div class="p-3 rounded-lg bg-primary-azul/10 group-hover:bg-primary-azul/20 transition-colors">
-            <svg class="w-6 h-6 text-primary-azul" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-            </svg>
-          </div>
-          <div class="flex-1 min-w-0">
-            <h4 class="font-semibold text-text-principal text-sm group-hover:text-primary-azul transition-colors truncate">
-              {doc.name}
-            </h4>
-            <p class="text-xs text-text-muted mt-1">
-              Tipo: {doc.type} • Click para descargar
-            </p>
-          </div>
-        </a>
-      ))}
+      {
+        [
+          {
+            name: "Aspectos generales - Automotriz Incamotors S.A.C.pdf",
+            path: "/assets/docs/Aspectos generales - Automotriz Incamotors S.A.C.pdf",
+            type: "PDF",
+          },
+          {
+            name: "Análisis Externo EFE y PESTEL",
+            path: "/assets/docs/ANALISIS EXTERNO EFEy pestel .xlsx",
+            type: "Excel",
+          },
+          {
+            name: "Análisis Interno",
+            path: "/assets/docs/analisis interno.xlsx",
+            type: "Excel",
+          },
+          {
+            name: "Matriz CAME",
+            path: "/assets/docs/Matriz CAME -  Ultimo .xlsx",
+            type: "Excel",
+          },
+          {
+            name: "Cadena de Valor",
+            path: "/assets/docs/Cadena de valor.xlsx",
+            type: "Excel",
+          },
+          {
+            name: "Mapa Estratégico",
+            path: "/assets/docs/mapa estrategico.xlsx",
+            type: "Excel",
+          },
+          {
+            name: "Plan Estratégico Incamotors 2021-2024",
+            path: "/assets/docs/Plan_Estrategico_Incamotors_2021_2024.docx",
+            type: "Word",
+          },
+          {
+            name: "Planeamiento Estratégico Incamotors",
+            path: "/assets/docs/Planeamiento_estrategico_Incamotors.docx",
+            type: "Word",
+          },
+        ].map((doc) => (
+          <a
+            href={doc.path}
+            download
+            class="content-card flex items-start gap-4 hover:border-primary-azul transition-colors group"
+          >
+            <div class="p-3 rounded-lg bg-primary-azul/10 group-hover:bg-primary-azul/20 transition-colors">
+              <svg
+                class="w-6 h-6 text-primary-azul"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+                />
+              </svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h4 class="font-semibold text-text-principal text-sm group-hover:text-primary-azul transition-colors truncate">
+                {doc.name}
+              </h4>
+              <p class="text-xs text-text-muted mt-1">
+                Tipo: {doc.type} • Click para descargar
+              </p>
+            </div>
+          </a>
+        ))
+      }
     </div>
   </section>
 
@@ -87,9 +153,10 @@ import DocsLayout from '../layouts/DocsLayout.astro';
   <section class="content-card mt-12">
     <h3>Nota sobre los Documentos</h3>
     <p class="mt-2 text-sm text-text-secundario">
-      Todos los documentos presentados son parte del análisis organizacional oficial de Incamotors S.A.C. 
-      realizado para el curso de Ingeniería Administrativa. Las evidencias fotográficas corresponden a 
-      instalaciones reales de la empresa en Arequipa, Perú.
+      Todos los documentos presentados son parte del análisis organizacional
+      oficial de Incamotors S.A.C. realizado para el curso de Ingeniería
+      Administrativa. Las evidencias fotográficas corresponden a instalaciones
+      reales de la empresa en Arequipa, Perú.
     </p>
   </section>
 
